@@ -190,6 +190,32 @@
         .catch(err => console.error('Error al registrar Service Worker:', err));
     }
   </script>
-  
+  <script>
+  document.querySelectorAll("input[type='number']").forEach(input => {
+    input.addEventListener("input", () => {
+      let total = 0;
+      const productos = [
+        { id: 'pepino', precio: 1 },
+        { id: 'kiwi', precio: 1.5 },
+        { id: 'perejil', precio: 1.5 },
+        { id: 'espinaca', precio: 1.5 },
+        { id: 'sandia', precio: 1 },
+        { id: 'maracuya', precio: 1 },
+        { id: 'mora', precio: 1 },
+        { id: 'naranja', precio: 1 },
+        { id: 'queso', precio: 1 },
+        { id: 'mixta', precio: 1.75 }
+      ];
+
+      productos.forEach(producto => {
+        const cantidad = parseInt(document.getElementById(producto.id).value) || 0;
+        total += producto.precio * cantidad;
+      });
+
+      document.getElementById("total").textContent = total.toFixed(2);
+    });
+  });
+</script>
+
 </body>
 </html>
