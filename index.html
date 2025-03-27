@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="manifest" href="manifest.json" />
+  <title>Jugos Tía Martha</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #8bc34a;
+      text-align: center;
+      padding: 2em 1em;
+      color: white;
+    }
+
+    .logo {
+      width: 150px;
+      margin-bottom: 1em;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin: 0.2em 0;
+    }
+
+    .btn-wsp {
+      background-color: #25d366;
+      color: white;
+      padding: 0.6em 1.2em;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 1em;
+    }
+
+    main {
+      max-width: 600px;
+      margin: 2em auto;
+      background-color: white;
+      padding: 2em;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    h3 {
+      color: #4caf50;
+    }
+
+    .producto {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1em;
+    }
+
+    .producto label {
+      flex: 1;
+    }
+
+    .producto input {
+      width: 60px;
+      padding: 0.3em;
+    }
+
+    .total {
+      text-align: right;
+      margin: 1.2em 0;
+      font-size: 1.2em;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      background-color: #25d366;
+      color: white;
+      border: none;
+      padding: 1em;
+      font-size: 1em;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #20c05c;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logotipo-jugos-tia-martha.png" alt="Logotipo" class="logo" />
+    <h1>Jugos Tía Martha</h1>
+    <p>Deliciosos jugos, tacos y más para disfrutar</p>
+    <a class="btn-wsp" href="https://wa.me/593986535080" target="_blank">Contáctanos por WhatsApp</a>
+  </header>
+
+  <main>
+    <h2>Haz tu pedido</h2>
+    <form id="formularioPedido">
+      <h3>🥦 Jugos Verdes</h3>
+      <div class="producto"><label>Pepino ($1.00)</label><input type="number" id="pepino" min="0" value="0" /></div>
+      <div class="producto"><label>Apio, manzana y kiwi ($1.50)</label><input type="number" id="kiwi" min="0" value="0" /></div>
+      <div class="producto"><label>Apio, manzana y perejil ($1.50)</label><input type="number" id="perejil" min="0" value="0" /></div>
+      <div class="producto"><label>Piña y espinaca ($1.50)</label><input type="number" id="espinaca" min="0" value="0" /></div>
+
+      <h3>🍹 Jugos Naturales</h3>
+      <div class="producto"><label>Sandía ($1.00)</label><input type="number" id="sandia" min="0" value="0" /></div>
+      <div class="producto"><label>Maracuyá ($1.00)</label><input type="number" id="maracuya" min="0" value="0" /></div>
+      <div class="producto"><label>Mora ($1.00)</label><input type="number" id="mora" min="0" value="0" /></div>
+      <div class="producto"><label>Naranja ($1.00)</label><input type="number" id="naranja" min="0" value="0" /></div>
+
+      <h3>🥙 Tostadas</h3>
+      <div class="producto"><label>Tostada de queso ($1.00)</label><input type="number" id="queso" min="0" value="0" /></div>
+      <div class="producto"><label>Tostada mixta ($1.75)</label><input type="number" id="mixta" min="0" value="0" /></div>
+
+      <div class="total"><strong>Total: $<span id="total">0.00</span></strong></div>
+      <button type="submit" class="btn-wsp">Enviar pedido por WhatsApp</button>
+    </form>
+  </main>
+
+  <script>
+    const productos = [
+      { id: 'pepino', nombre: 'sandía', tipo: 'jugo', precio: 1 },
+      { id: 'kiwi', nombre: 'apio, manzana y kiwi', tipo: 'jugo', precio: 1.5 },
+      { id: 'perejil', nombre: 'apio, manzana y perejil', tipo: 'jugo', precio: 1.5 },
+      { id: 'espinaca', nombre: 'piña y espinaca', tipo: 'jugo', precio: 1.5 },
+      { id: 'sandia', nombre: 'sandía', tipo: 'jugo', precio: 1 },
+      { id: 'maracuya', nombre: 'maracuyá', tipo: 'jugo', precio: 1 },
+      { id: 'mora', nombre: 'mora', tipo: 'jugo', precio: 1 },
+      { id: 'naranja', nombre: 'naranja', tipo: 'jugo', precio: 1 },
+      { id: 'queso', nombre: 'tostada de queso', tipo: 'tostada', precio: 1 },
+      { id: 'mixta', nombre: 'tostada mixta', tipo: 'tostada', precio: 1.75 }
+    ];
+
+    document.getElementById("formularioPedido").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      let mensaje = "Hola, quiero hacer el siguiente pedido:\n\n";
+      let total = 0;
+
+      productos.forEach(producto => {
+        const cantidad = parseInt(document.getElementById(producto.id).value);
+        if (cantidad > 0) {
+          if (producto.tipo === "jugo") {
+            const texto = cantidad === 1 ? `1 jugo de ${producto.nombre}` : `${cantidad} jugos de ${producto.nombre}`;
+            mensaje += `- ${texto} = $${(producto.precio * cantidad).toFixed(2)}\n`;
+          } else {
+            const texto = cantidad === 1 ? `1 ${producto.nombre}` : `${cantidad} ${producto.nombre}s`;
+            mensaje += `- ${texto} = $${(producto.precio * cantidad).toFixed(2)}\n`;
+          }
+          total += producto.precio * cantidad;
+        }
+      });
+
+      mensaje += `\nTotal: $${total.toFixed(2)}`;
+
+      document.getElementById("total").textContent = total.toFixed(2);
+
+      const numero = "593986535080";
+      const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+      window.open(url, "_blank");
+    });
+  </script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(reg => console.log('Service Worker registrado:', reg))
+        .catch(err => console.error('Error al registrar Service Worker:', err));
+    }
+  </script>
+  
+</body>
+</html>

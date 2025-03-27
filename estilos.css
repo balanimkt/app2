@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f1f1;
+  }
+  
+  header {
+    background-color: #8bc34a;
+    color: white;
+    text-align: center;
+    padding: 2em 1em;
+  }
+  
+  .logo {
+    width: 160px;
+    margin-bottom: 1em;
+  }
+  
+  main {
+    padding: 2em;
+    max-width: 600px;
+    margin: auto;
+    background-color: white;
+    border-radius: 10px;
+  }
+  
+  h1, h2, h3 {
+    text-align: center;
+  }
+  
+  .producto {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5em 0;
+  }
+  
+  input[type="number"] {
+    width: 60px;
+    padding: 0.3em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .btn-wsp {
+    display: block;
+    background-color: #25d366;
+    color: white;
+    padding: 1em;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 1em auto;
+    width: fit-content;
+  }
+  
+  .total {
+    text-align: right;
+    margin-top: 1em;
+    font-size: 1.2em;
+  }
+  

@@ -1,0 +1,21 @@
+{
+    "name": "Jugos Tía Martha",
+    "short_name": "Tía Martha",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#8bc34a",
+    "theme_color": "#8bc34a",
+    "icons": [
+      {
+        "src": "icons/icon-192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "icons/icon-512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }
+  
