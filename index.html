@@ -266,6 +266,336 @@ footer{padding:40px 0;color:var(--muted);border-top:1px solid rgba(255,122,0,.16
   .phone-card{flex-basis:78vw}
 }
 
+
+/* ===== MEJORA SOLO MÓVIL: experiencia tipo app sin afectar escritorio ===== */
+.mobile-app-demo{
+  display:none;
+}
+
+@media(max-width:768px){
+  /* En móvil ocultamos únicamente el demo grande tipo escritorio */
+  #dashboard .demo-app{
+    display:none;
+  }
+
+  .mobile-app-demo{
+    display:block;
+    margin-top:24px;
+  }
+
+  .mobile-app-frame{
+    width:min(92vw,390px);
+    margin:0 auto;
+    border-radius:34px;
+    padding:12px;
+    background:linear-gradient(145deg,#f8fafc,#111827);
+    box-shadow:0 28px 80px rgba(0,0,0,.55);
+    border:1px solid rgba(255,255,255,.16);
+  }
+
+  .mobile-app-screen{
+    height:660px;
+    border-radius:26px;
+    overflow:hidden;
+    background:#08101f;
+    border:1px solid rgba(255,255,255,.10);
+    position:relative;
+  }
+
+  .mobile-app-top{
+    height:54px;
+    background:#0b1224;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 16px;
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+
+  .mobile-app-logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:900;
+    font-size:.88rem;
+  }
+
+  .mobile-app-logo span{
+    width:34px;
+    height:34px;
+    border-radius:11px;
+    display:grid;
+    place-items:center;
+    background:linear-gradient(135deg,var(--red),var(--orange));
+    box-shadow:0 0 18px rgba(255,122,0,.35);
+  }
+
+  .mobile-app-user{
+    color:var(--muted);
+    font-size:.78rem;
+  }
+
+  .mobile-screen-track{
+    display:flex;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    scroll-behavior:smooth;
+    scrollbar-width:none;
+    -webkit-overflow-scrolling:touch;
+    height:606px;
+  }
+
+  .mobile-screen-track::-webkit-scrollbar{
+    display:none;
+  }
+
+  .mobile-screen-slide{
+    flex:0 0 100%;
+    scroll-snap-align:center;
+    padding:18px;
+    overflow:hidden;
+  }
+
+  .mobile-title{
+    font-size:1.25rem;
+    margin-bottom:5px;
+  }
+
+  .mobile-subtitle{
+    color:var(--muted);
+    font-size:.86rem;
+    line-height:1.45;
+    margin-bottom:16px;
+  }
+
+  .mobile-kpi-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+    margin-bottom:16px;
+  }
+
+  .mobile-kpi{
+    border:1px solid rgba(255,255,255,.08);
+    background:rgba(255,255,255,.055);
+    border-radius:17px;
+    padding:14px;
+  }
+
+  .mobile-kpi small{
+    display:block;
+    color:var(--muted);
+    font-size:.72rem;
+    margin-bottom:8px;
+  }
+
+  .mobile-kpi b{
+    display:block;
+    font-size:1.5rem;
+  }
+
+  .mobile-kpi em{
+    display:block;
+    font-style:normal;
+    color:var(--green);
+    font-size:.72rem;
+    margin-top:5px;
+    font-weight:800;
+  }
+
+  .mobile-card-list{
+    display:grid;
+    gap:10px;
+  }
+
+  .mobile-card{
+    border:1px solid rgba(255,255,255,.08);
+    background:rgba(255,255,255,.055);
+    border-radius:17px;
+    padding:13px;
+  }
+
+  .mobile-card-row{
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+    align-items:center;
+  }
+
+  .mobile-card b{
+    display:block;
+    font-size:.92rem;
+  }
+
+  .mobile-card small{
+    color:var(--muted);
+    display:block;
+    margin-top:4px;
+    font-size:.75rem;
+  }
+
+  .mobile-status{
+    border-radius:999px;
+    padding:6px 9px;
+    font-size:.68rem;
+    font-weight:900;
+    white-space:nowrap;
+  }
+
+  .mobile-status.blue{background:rgba(56,189,248,.15);color:var(--blue)}
+  .mobile-status.orange{background:rgba(255,122,0,.15);color:#ffb365}
+  .mobile-status.green{background:rgba(34,197,94,.15);color:var(--green)}
+  .mobile-status.red{background:rgba(239,68,68,.15);color:#f87171}
+
+  .mobile-chart{
+    width:190px;
+    height:190px;
+    border-radius:50%;
+    margin:18px auto;
+    background:
+      radial-gradient(circle at center,#08101f 0 42%,transparent 43%),
+      conic-gradient(#38bdf8 0 42%, #ff7a00 42% 67%, #22c55e 67% 84%, #8b5cf6 84% 100%);
+    display:grid;
+    place-items:center;
+    box-shadow:0 0 28px rgba(255,122,0,.13);
+  }
+
+  .mobile-chart div{
+    text-align:center;
+  }
+
+  .mobile-chart b{
+    font-size:1.7rem;
+  }
+
+  .mobile-bottom-nav{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    height:64px;
+    background:rgba(8,16,31,.96);
+    border-top:1px solid rgba(255,255,255,.08);
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    z-index:5;
+  }
+
+  .mobile-bottom-nav button{
+    border:0;
+    background:transparent;
+    color:#76839c;
+    font-size:.7rem;
+    display:grid;
+    place-items:center;
+    gap:2px;
+    cursor:pointer;
+  }
+
+  .mobile-bottom-nav button span{
+    font-size:1.05rem;
+  }
+
+  .mobile-bottom-nav button.active{
+    color:var(--orange);
+  }
+
+  .mobile-dots{
+    display:flex;
+    justify-content:center;
+    gap:9px;
+    margin-top:16px;
+  }
+
+  .mobile-dots button{
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    border:0;
+    background:rgba(255,255,255,.24);
+    cursor:pointer;
+  }
+
+  .mobile-dots button.active{
+    background:var(--orange);
+    box-shadow:0 0 16px rgba(255,122,0,.8);
+  }
+
+  .mobile-hint{
+    text-align:center;
+    color:var(--muted);
+    font-size:.82rem;
+    margin-top:12px;
+  }
+
+  .mobile-mini-table{
+    display:grid;
+    gap:10px;
+    margin-top:12px;
+  }
+
+  .mobile-line{
+    height:12px;
+    border-radius:999px;
+    background:rgba(255,255,255,.12);
+  }
+
+  .mobile-line.orange{background:rgba(255,122,0,.55)}
+  .mobile-line.blue{background:rgba(56,189,248,.4)}
+  .mobile-line.short{width:65%}
+
+  .mobile-inventory-grid{
+    display:grid;
+    gap:12px;
+    margin-top:12px;
+  }
+
+  .mobile-inventory-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border:1px solid rgba(255,255,255,.08);
+    background:rgba(255,255,255,.055);
+    border-radius:17px;
+    padding:14px;
+  }
+
+  .mobile-inventory-icon{
+    width:42px;
+    height:42px;
+    border-radius:14px;
+    display:grid;
+    place-items:center;
+    background:rgba(255,122,0,.13);
+    color:#ffb365;
+  }
+
+  .mobile-money{
+    color:var(--green);
+    font-weight:900;
+    font-size:1.55rem;
+  }
+}
+
+@media(max-width:420px){
+  .mobile-app-screen{
+    height:620px;
+  }
+
+  .mobile-screen-track{
+    height:566px;
+  }
+
+  .mobile-screen-slide{
+    padding:15px;
+  }
+
+  .mobile-chart{
+    width:160px;
+    height:160px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -317,7 +647,119 @@ footer{padding:40px 0;color:var(--muted);border-top:1px solid rgba(255,122,0,.16
 <div class="screen" id="screen-clientes"><div class="panel"><h3>Clientes <span class="badge blue">Base comercial</span></h3><div class="table-wrap"><table><thead><tr><th>Nombre</th><th>RUC</th><th>Teléfono</th><th>Email</th><th>Acción</th></tr></thead><tbody><tr><td>Comercial Automotriz Andina</td><td>XXXXXX001</td><td>09XXXXXXX</td><td>contacto@empresa.com</td><td><button class="btn btn-ghost">Editar</button></td></tr><tr><td>Taller El Pistón</td><td>XXXXXX002</td><td>09XXXXXXX</td><td>info@taller.com</td><td><button class="btn btn-ghost">Editar</button></td></tr></tbody></table></div></div></div>
 <div class="screen" id="screen-mecanicos"><div class="panel"><h3>Mecánicos <span class="badge green">Personal activo</span></h3><div class="table-wrap"><table><thead><tr><th>Nombre</th><th>Teléfono</th><th>Ciudad</th><th>Estado</th></tr></thead><tbody><tr><td>Técnico Senior A</td><td>09XXXXXXX</td><td>Ciudad 1</td><td><span class="badge green">Activo</span></td></tr><tr><td>Técnico Especialista B</td><td>09XXXXXXX</td><td>Ciudad 2</td><td><span class="badge green">Activo</span></td></tr></tbody></table></div></div></div>
 <div class="screen" id="screen-cobrar"><div class="panel"><h3>Cuentas por cobrar <span class="badge red">Control financiero</span></h3><div class="kpis"><div class="kpi"><span>Órdenes</span><b>13</b><small>pendientes</small></div><div class="kpi"><span>Valor total</span><b>$4.334</b><small>referencial</small></div><div class="kpi"><span>Abonado</span><b>$293</b><small>registrado</small></div><div class="kpi"><span>Saldo</span><b>$4.040</b><small style="color:#f87171">pendiente</small></div></div><div class="table-wrap"><table><thead><tr><th>OT</th><th>Cliente</th><th>Estado</th><th>Total</th><th>Abonado</th><th>Saldo</th></tr></thead><tbody><tr><td>#1048</td><td>Taller Central</td><td><span class="badge red">Pendiente</span></td><td>$720.00</td><td>$0.00</td><td>$720.00</td></tr><tr><td>#1047</td><td>Diesel Pro</td><td><span class="badge orange">Parcial</span></td><td>$580.00</td><td>$150.00</td><td>$430.00</td></tr></tbody></table></div></div></div>
-</section></div></div></section>
+</section></div>
+<div class="mobile-app-demo">
+  <div class="mobile-app-frame">
+    <div class="mobile-app-screen">
+      <div class="mobile-app-top">
+        <div class="mobile-app-logo"><span>RS4</span> RECTIMATIC</div>
+        <div class="mobile-app-user">Usuario autorizado</div>
+      </div>
+
+      <div class="mobile-screen-track" id="mobileAppTrack">
+
+        <section class="mobile-screen-slide">
+          <h3 class="mobile-title">Dashboard Ejecutivo</h3>
+          <p class="mobile-subtitle">Indicadores principales para controlar la operación diaria.</p>
+
+          <div class="mobile-kpi-grid">
+            <div class="mobile-kpi"><small>Órdenes activas</small><b>128</b><em>+8 esta semana</em></div>
+            <div class="mobile-kpi"><small>En proceso</small><b>34</b><em style="color:var(--yellow)">Seguimiento</em></div>
+            <div class="mobile-kpi"><small>Clientes</small><b>860</b><em>Base activa</em></div>
+            <div class="mobile-kpi"><small>Por cobrar</small><b>$8.420</b><em style="color:#f87171">Referencial</em></div>
+          </div>
+
+          <div class="mobile-chart"><div><small>Total</small><br><b>128</b></div></div>
+
+          <div class="mobile-card-list">
+            <div class="mobile-card"><div class="mobile-card-row"><div><b>#1048 · Motor diésel</b><small>Taller Central</small></div><span class="mobile-status blue">Recibido</span></div></div>
+            <div class="mobile-card"><div class="mobile-card-row"><div><b>#1047 · Culata</b><small>Diesel Pro</small></div><span class="mobile-status orange">En proceso</span></div></div>
+          </div>
+        </section>
+
+        <section class="mobile-screen-slide">
+          <h3 class="mobile-title">Órdenes de Trabajo</h3>
+          <p class="mobile-subtitle">Seguimiento completo de cada motor desde el ingreso hasta la entrega.</p>
+
+          <div class="mobile-card-list">
+            <div class="mobile-card"><div class="mobile-card-row"><div><b>OT #1048</b><small>Motor diésel 4 cilindros · Técnico A</small></div><span class="mobile-status blue">Recibido</span></div></div>
+            <div class="mobile-card"><div class="mobile-card-row"><div><b>OT #1047</b><small>Motor gasolina 2.0 · Técnico B</small></div><span class="mobile-status orange">Proceso</span></div></div>
+            <div class="mobile-card"><div class="mobile-card-row"><div><b>OT #1046</b><small>Culata multiválvula · Técnico C</small></div><span class="mobile-status green">Terminado</span></div></div>
+            <div class="mobile-card"><div class="mobile-card-row"><div><b>OT #1045</b><small>Cigüeñal estándar · Técnico A</small></div><span class="mobile-status red">Pendiente</span></div></div>
+          </div>
+
+          <div class="mobile-mini-table">
+            <div class="mobile-line orange"></div>
+            <div class="mobile-line"></div>
+            <div class="mobile-line blue"></div>
+            <div class="mobile-line short"></div>
+          </div>
+        </section>
+
+        <section class="mobile-screen-slide">
+          <h3 class="mobile-title">Pizarra de Producción</h3>
+          <p class="mobile-subtitle">Vista rápida de trabajos recibidos, en proceso y listos para entrega.</p>
+
+          <div class="mobile-card-list">
+            <div class="mobile-card"><div class="mobile-card-row"><div><b>Recibido</b><small>5 órdenes en espera</small></div><span class="mobile-status blue">Hoy</span></div></div>
+            <div class="mobile-card"><div class="mobile-card-row"><div><b>En proceso</b><small>8 órdenes asignadas</small></div><span class="mobile-status orange">Activo</span></div></div>
+            <div class="mobile-card"><div class="mobile-card-row"><div><b>Terminado</b><small>3 órdenes listas</small></div><span class="mobile-status green">Entrega</span></div></div>
+            <div class="mobile-card"><div class="mobile-card-row"><div><b>Sin hora</b><small>2 órdenes por programar</small></div><span class="mobile-status red">Revisar</span></div></div>
+          </div>
+        </section>
+
+        <section class="mobile-screen-slide">
+          <h3 class="mobile-title">Inventario y Bodega</h3>
+          <p class="mobile-subtitle">Control de repuestos, existencias, ingresos y egresos.</p>
+
+          <div class="mobile-inventory-grid">
+            <div class="mobile-inventory-item"><div><b>Repuestos</b><small>Stock disponible</small></div><div class="mobile-inventory-icon">📦</div></div>
+            <div class="mobile-inventory-item"><div><b>Mano de obra</b><small>Servicios técnicos</small></div><div class="mobile-inventory-icon">🔧</div></div>
+            <div class="mobile-inventory-item"><div><b>Bodega</b><small>Movimientos y kardex</small></div><div class="mobile-inventory-icon">↔️</div></div>
+            <div class="mobile-inventory-item"><div><b>Datos técnicos</b><small>Mediciones del motor</small></div><div class="mobile-inventory-icon">📐</div></div>
+          </div>
+        </section>
+
+        <section class="mobile-screen-slide">
+          <h3 class="mobile-title">Finanzas y Cobranza</h3>
+          <p class="mobile-subtitle">Seguimiento de abonos, saldos pendientes y cuentas por cobrar.</p>
+
+          <div class="mobile-card">
+            <small>Por cobrar</small>
+            <div class="mobile-money">$8.420</div>
+            <small>Valor referencial</small>
+          </div>
+
+          <div class="mobile-card-list" style="margin-top:14px">
+            <div class="mobile-card"><div class="mobile-card-row"><div><b>Facturas pendientes</b><small>Seguimiento de cartera</small></div><span class="mobile-status orange">23</span></div></div>
+            <div class="mobile-card"><div class="mobile-card-row"><div><b>Clientes con saldo</b><small>Control administrativo</small></div><span class="mobile-status red">18</span></div></div>
+            <div class="mobile-card"><div class="mobile-card-row"><div><b>Abonos registrados</b><small>Pagos parciales</small></div><span class="mobile-status green">$293</span></div></div>
+          </div>
+        </section>
+
+      </div>
+
+      <div class="mobile-bottom-nav">
+        <button class="active" type="button" data-mobile-go="0"><span>🏠</span>Inicio</button>
+        <button type="button" data-mobile-go="1"><span>📋</span>Órdenes</button>
+        <button type="button" data-mobile-go="2"><span>🧩</span>Pizarra</button>
+        <button type="button" data-mobile-go="3"><span>📦</span>Inventario</button>
+        <button type="button" data-mobile-go="4"><span>💰</span>Finanzas</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="mobile-dots" id="mobileAppDots">
+    <button class="active" type="button"></button>
+    <button type="button"></button>
+    <button type="button"></button>
+    <button type="button"></button>
+    <button type="button"></button>
+  </div>
+  <p class="mobile-hint">Desliza con el dedo para explorar las pantallas del sistema.</p>
+</div>
+
+</div></section>
 
 <section class="section" id="movilidad"><div class="container"><div class="section-title"><h2>Acceso desde cualquier dispositivo</h2><p>Consulte órdenes, clientes, inventario, producción y reportes desde computadora, tablet o teléfono móvil.</p></div><div class="mobile-wrap"><div class="mobile-features"><div class="mobile-feature"><h3>📊 Dashboard ejecutivo</h3><p>Visualice órdenes activas, cuentas por cobrar, clientes, producción y métricas clave.</p></div><div class="mobile-feature"><h3>🔧 Órdenes de trabajo</h3><p>Consulte el avance de cada trabajo, fotografías, mano de obra, repuestos y observaciones.</p></div><div class="mobile-feature"><h3>📦 Inventario y repuestos</h3><p>Controle existencias, movimientos, ingresos, egresos y disponibilidad.</p></div><div class="benefits-row"><span class="benefit">☁️ Acceso en línea</span><span class="benefit">🔒 Información segura</span><span class="benefit">⚡ Tiempo real</span><span class="benefit">📱 Compatible</span></div></div><div class="phone-carousel-wrap">
   <button class="phone-arrow prev" type="button" aria-label="Anterior">‹</button>
@@ -390,6 +832,47 @@ function setupPhoneCarousel(){
   setTimeout(()=>go(1),250);
 }
 setupPhoneCarousel();
+
+
+function setupMobileAppDemo(){
+  const track=document.getElementById('mobileAppTrack');
+  if(!track) return;
+  const slides=Array.from(track.children);
+  const dots=Array.from(document.querySelectorAll('#mobileAppDots button'));
+  const nav=Array.from(document.querySelectorAll('[data-mobile-go]'));
+
+  function current(){
+    const center=track.scrollLeft+track.clientWidth/2;
+    let closest=0,min=Infinity;
+    slides.forEach((s,i)=>{
+      const c=s.offsetLeft+s.clientWidth/2;
+      const d=Math.abs(center-c);
+      if(d<min){min=d;closest=i;}
+    });
+    return closest;
+  }
+
+  function setActive(i){
+    dots.forEach((d,idx)=>d.classList.toggle('active',idx===i));
+    nav.forEach((b,idx)=>b.classList.toggle('active',idx===i));
+  }
+
+  function go(i){
+    const index=Math.max(0,Math.min(slides.length-1,i));
+    const s=slides[index];
+    track.scrollTo({left:s.offsetLeft,behavior:'smooth'});
+    setActive(index);
+  }
+
+  dots.forEach((dot,i)=>dot.addEventListener('click',()=>go(i)));
+  nav.forEach((btn)=>btn.addEventListener('click',()=>go(Number(btn.dataset.mobileGo))));
+
+  track.addEventListener('scroll',()=>{
+    window.clearTimeout(track._mobileTimer);
+    track._mobileTimer=window.setTimeout(()=>setActive(current()),60);
+  });
+}
+setupMobileAppDemo();
 
 new Chart(document.getElementById('estadoChart'),{type:'doughnut',data:{labels:['Recibido','En proceso','Terminado'],datasets:[{data:[17,9,6],backgroundColor:['#38bdf8','#ff7a00','#22c55e'],borderWidth:0}]},options:{plugins:{legend:{position:'bottom',labels:{color:'#dce3f4'}}},cutout:'66%'}});
 </script></body></html>
