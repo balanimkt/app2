@@ -800,6 +800,115 @@ footer{padding:40px 0;color:var(--muted);border-top:1px solid rgba(255,122,0,.16
   }
 }
 
+
+/* =========================================================
+   AJUSTE VISUAL FINAL SEGURO
+   Solo colores y fondos. No modifica estructura ni funciones.
+   ========================================================= */
+
+/* Fondo general: elimina tono café/kaki y vuelve a negro + azul tecnológico */
+body{
+  background:
+    linear-gradient(rgba(56,189,248,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(56,189,248,.035) 1px,transparent 1px),
+    radial-gradient(circle at 16% 8%,rgba(36,78,255,.22),transparent 34%),
+    radial-gradient(circle at 84% 14%,rgba(255,122,0,.12),transparent 32%),
+    radial-gradient(circle at 50% 88%,rgba(56,189,248,.08),transparent 42%),
+    linear-gradient(135deg,#050816 0%,#0b1326 48%,#070b14 100%) !important;
+  background-size:90px 90px,90px 90px,auto,auto,auto,auto !important;
+}
+
+/* Encabezado más oscuro y futurista */
+header{
+  background:rgba(5,8,18,.94) !important;
+  border-bottom:1px solid rgba(56,189,248,.12) !important;
+}
+
+/* Hero: refuerzo azul tecnológico sin tocar contenido */
+.hero{
+  background:
+    radial-gradient(circle at top left,rgba(56,189,248,.08),transparent 32%),
+    radial-gradient(circle at bottom right,rgba(255,122,0,.08),transparent 34%) !important;
+}
+
+/* Etiqueta superior del hero: menos marrón, más cristal oscuro */
+.tag{
+  background:rgba(15,23,42,.62) !important;
+  border-color:rgba(255,122,0,.32) !important;
+  color:#ffb365 !important;
+}
+
+/* Tarjeta de ingreso seguro: cristal azul oscuro */
+.login-card{
+  background:linear-gradient(180deg,rgba(56,189,248,.08),rgba(255,122,0,.045)) !important;
+  border-color:rgba(56,189,248,.14) !important;
+}
+
+.login-box{
+  background:rgba(8,16,31,.86) !important;
+  border-color:rgba(255,122,0,.18) !important;
+  backdrop-filter:blur(14px);
+}
+
+/* Paneles y tarjetas: tono más tecnológico, sin cambiar tamaños */
+.module,
+.why-card,
+.trust-item,
+.plan,
+.step,
+.mobile-feature,
+.panel,
+.kpi,
+.mini-card{
+  background-color:rgba(15,23,42,.72) !important;
+}
+
+/* Demo principal: conserva todo, solo ajusta el fondo al azul oscuro */
+.demo-app{
+  background:rgba(8,16,31,.42) !important;
+  border-color:rgba(56,189,248,.12) !important;
+}
+
+.app-main{
+  background:
+    radial-gradient(circle at 80% 0%,rgba(56,189,248,.10),transparent 28%),
+    #0b1020 !important;
+}
+
+.sidebar{
+  background:#080d1b !important;
+  border-right-color:rgba(56,189,248,.12) !important;
+}
+
+/* CTA final: menos café, más software premium */
+.cta{
+  background:
+    radial-gradient(circle at 50% 0%,rgba(56,189,248,.12),transparent 42%),
+    radial-gradient(circle at 80% 80%,rgba(255,122,0,.08),transparent 38%),
+    rgba(255,255,255,.032) !important;
+  border-color:rgba(56,189,248,.16) !important;
+}
+
+/* Logo: más visible sin cuadro café ni fondo blanco */
+.brand-logo-img{
+  background:transparent !important;
+  box-shadow:none !important;
+  filter:
+    drop-shadow(0 0 10px rgba(255,122,0,.42))
+    drop-shadow(0 0 4px rgba(255,255,255,.18)) !important;
+}
+
+.mobile-app-logo .mobile-logo-img{
+  background:transparent !important;
+  box-shadow:none !important;
+  filter:drop-shadow(0 0 8px rgba(255,122,0,.42)) !important;
+}
+
+/* Footer y líneas: coherencia azul/naranja */
+footer{
+  border-top-color:rgba(56,189,248,.12) !important;
+}
+
 </style>
 </head>
 <body>
@@ -1161,4 +1270,3 @@ setupMobileAppDemo();
 
 new Chart(document.getElementById('estadoChart'),{type:'doughnut',data:{labels:['Recibido','En proceso','Terminado'],datasets:[{data:[17,9,6],backgroundColor:['#38bdf8','#ff7a00','#22c55e'],borderWidth:0}]},options:{plugins:{legend:{position:'bottom',labels:{color:'#dce3f4'}}},cutout:'66%'}});
 </script></body></html>
-
