@@ -98,6 +98,87 @@ footer{padding:40px 0;color:var(--muted);border-top:1px solid rgba(255,122,0,.16
 @media(max-width:1100px){.dashboard-grid,.mobile-wrap{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(2,1fr)}.tech-grid,.photo-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:980px){.menu{display:none}.hero-grid{grid-template-columns:1fr}.module-grid,.steps,.pricing{grid-template-columns:repeat(2,1fr)}.demo-app{grid-template-columns:1fr}.sidebar{display:grid;grid-template-columns:repeat(2,1fr);gap:4px}.side-brand,.side-section{grid-column:1/-1}.app-main{padding:18px}h1{letter-spacing:-1px}.cards-list{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.plan.featured{transform:none}}
 @media(max-width:620px){.module-grid,.kpis,.sidebar,.tech-grid,.photo-grid,.steps,.pricing{grid-template-columns:1fr}.hero{padding-top:54px}table{min-width:650px}.event{grid-template-columns:1fr}.phones{gap:8px}.phone{width:180px;height:360px}.phone.side{display:none}}
+
+.module-carousel-wrap{position:relative;margin-top:28px}
+.module-carousel{
+  display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;
+  padding:18px 8px 26px;cursor:grab;scrollbar-width:none;-webkit-overflow-scrolling:touch
+}
+.module-carousel::-webkit-scrollbar{display:none}
+.module-carousel:active{cursor:grabbing}
+.module-slide{
+  flex:0 0 310px;scroll-snap-align:center;border:1px solid rgba(255,122,0,.22);
+  background:linear-gradient(180deg,rgba(255,122,0,.10),rgba(255,255,255,.045));
+  border-radius:26px;padding:22px;min-height:300px;box-shadow:0 12px 42px rgba(0,0,0,.22);
+  transition:.25s
+}
+.module-slide:hover{transform:translateY(-6px);border-color:rgba(255,122,0,.62);box-shadow:0 0 45px rgba(255,122,0,.16)}
+.slide-screen{
+  height:130px;border-radius:20px;margin-bottom:18px;overflow:hidden;border:1px solid rgba(255,255,255,.09);
+  background:#0b1020;position:relative
+}
+.slide-top{height:34px;background:linear-gradient(135deg,var(--red),var(--orange));display:flex;align-items:center;padding:0 12px;font-size:.74rem;font-weight:900;color:white}
+.slide-lines{padding:14px;display:grid;gap:8px}
+.fake-line{height:12px;border-radius:999px;background:rgba(255,255,255,.16)}
+.fake-line.short{width:62%}.fake-line.orange{background:rgba(255,122,0,.75)}.fake-line.blue{background:rgba(56,189,248,.55)}
+.fake-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;padding:12px}
+.fake-box{height:34px;border-radius:10px;background:rgba(255,255,255,.12);display:grid;place-items:center;font-size:.7rem;color:#dce3f4}
+.module-slide h3{font-size:1.22rem;margin-bottom:10px}
+.module-slide p{color:var(--muted);line-height:1.55;font-size:.95rem;margin-bottom:16px}
+.carousel-btn{
+  position:absolute;top:48%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;
+  border:1px solid rgba(255,122,0,.35);background:rgba(7,9,20,.86);color:white;font-size:1.8rem;
+  z-index:5;cursor:pointer;box-shadow:0 0 24px rgba(255,122,0,.20)
+}
+.carousel-btn.prev{left:-4px}.carousel-btn.next{right:-4px}
+.carousel-dots{display:flex;justify-content:center;gap:10px;margin-top:4px}
+.carousel-dots button{width:11px;height:11px;border-radius:50%;border:0;background:rgba(255,255,255,.25);cursor:pointer}
+.carousel-dots button.active{background:var(--orange);box-shadow:0 0 18px rgba(255,122,0,.8)}
+@media(max-width:700px){
+  .module-slide{flex-basis:82vw}
+  .carousel-btn{display:none}
+}
+
+
+.faux-carousel-wrap{position:relative;margin-top:30px}
+.faux-carousel{
+  display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;
+  padding:20px 8px 34px;cursor:grab;scrollbar-width:none;-webkit-overflow-scrolling:touch
+}
+.faux-carousel::-webkit-scrollbar{display:none}
+.faux-carousel:active{cursor:grabbing}
+.faux-slide{
+  flex:0 0 min(920px,88vw);scroll-snap-align:center;border:1px solid rgba(255,122,0,.28);
+  background:linear-gradient(180deg,rgba(255,122,0,.10),rgba(255,255,255,.045));
+  border-radius:30px;padding:22px;box-shadow:0 22px 65px rgba(0,0,0,.38);transition:.25s
+}
+.faux-slide:hover{transform:translateY(-5px);border-color:rgba(255,122,0,.65);box-shadow:0 0 55px rgba(255,122,0,.18)}
+.faux-browser{border-radius:22px;overflow:hidden;border:1px solid rgba(255,255,255,.10);background:#090e1d}
+.faux-top{height:42px;display:flex;align-items:center;gap:8px;padding:0 16px;border-bottom:1px solid rgba(255,255,255,.08);background:#0d1324}
+.faux-dot{width:12px;height:12px;border-radius:50%;background:#ff5f57}.faux-dot:nth-child(2){background:#ffbd2e}.faux-dot:nth-child(3){background:#28c840}
+.faux-title{margin-left:10px;color:#9aa4b8;font-size:.78rem;font-weight:800;letter-spacing:.5px}
+.faux-screen{height:430px;background:#0b1020;padding:18px;overflow:hidden}
+.faux-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:14px}
+.faux-kpi{border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.055);border-radius:16px;padding:14px}
+.faux-kpi small{color:#9aa4b8;font-size:.68rem;text-transform:uppercase;letter-spacing:.7px}
+.faux-kpi b{display:block;margin-top:8px;font-size:1.28rem;color:#fff}
+.faux-layout{display:grid;grid-template-columns:1.4fr .8fr;gap:14px}
+.faux-panel{border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.045);border-radius:18px;padding:14px;min-height:150px}
+.faux-panel h4{font-size:.88rem;margin-bottom:12px;color:#dce3f4}
+.faux-table{display:grid;gap:8px}
+.faux-row{display:grid;grid-template-columns:.45fr 1.1fr .9fr .65fr;gap:8px;align-items:center}
+.faux-cell{height:24px;border-radius:8px;background:rgba(255,255,255,.10)}
+.faux-cell.orange{background:rgba(255,122,0,.45)}.faux-cell.blue{background:rgba(56,189,248,.35)}.faux-cell.green{background:rgba(34,197,94,.35)}
+.faux-chart{height:170px;border-radius:14px;background:radial-gradient(circle at 50% 50%, transparent 37%, rgba(255,122,0,.9) 38%, rgba(255,122,0,.9) 50%, transparent 51%), conic-gradient(#38bdf8 0 48%, #ff7a00 48% 74%, #22c55e 74% 100%);filter:drop-shadow(0 0 18px rgba(255,122,0,.18))}
+.faux-form{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.faux-input{height:40px;border-radius:11px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08)}.faux-input.big{height:90px;grid-column:span 2}
+.faux-kanban{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.faux-col{border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:12px;background:rgba(255,255,255,.045)}.faux-ticket{height:72px;border-radius:14px;background:rgba(255,255,255,.08);margin-top:10px;padding:10px}.faux-ticket:before{content:"";display:block;width:70%;height:11px;border-radius:8px;background:rgba(255,122,0,.5);margin-bottom:9px}.faux-ticket:after{content:"";display:block;width:48%;height:9px;border-radius:8px;background:rgba(255,255,255,.14)}
+.faux-tech{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.faux-tech-card{border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:14px;background:rgba(255,255,255,.05);text-align:center}.faux-tech-card .icon{font-size:1.45rem;margin:0 auto 8px;background:none;width:auto;height:auto}.faux-tech-card .value{height:28px;border-radius:10px;background:rgba(255,255,255,.09);margin-top:10px}
+.faux-photos{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.faux-photo{height:135px;border-radius:16px;background:linear-gradient(135deg,rgba(255,122,0,.50),rgba(56,189,248,.22)),#111827;border:1px solid rgba(255,255,255,.10);display:grid;place-items:center;font-size:2rem}
+.faux-slide-body{display:flex;justify-content:space-between;gap:18px;align-items:center;margin-top:18px;flex-wrap:wrap}.faux-slide-body h3{font-size:1.45rem;margin-bottom:6px}.faux-slide-body p{color:var(--muted);line-height:1.55;max-width:620px}
+.faux-dots{display:flex;justify-content:center;gap:10px;margin-top:2px}.faux-dots button{width:11px;height:11px;border-radius:50%;border:0;background:rgba(255,255,255,.25);cursor:pointer}.faux-dots button.active{background:var(--orange);box-shadow:0 0 18px rgba(255,122,0,.8)}
+@media(max-width:760px){.faux-slide{flex-basis:86vw;padding:14px}.faux-screen{height:360px}.faux-kpis{grid-template-columns:repeat(2,1fr)}.faux-layout,.faux-kanban,.faux-tech{grid-template-columns:1fr}.faux-photos{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.faux-screen{height:320px}.faux-slide-body h3{font-size:1.2rem}}
+
 </style>
 </head>
 <body>
@@ -112,14 +193,188 @@ footer{padding:40px 0;color:var(--muted);border-top:1px solid rgba(255,122,0,.16
 <div class="screen" id="screen-ordenes"><div class="panel"><h3>Órdenes de trabajo <span class="badge blue">Filtros por estado</span></h3><div class="tabs"><button class="tab active">Todas</button><button class="tab">Recibido</button><button class="tab">En proceso</button><button class="tab">Terminado</button></div><div class="table-wrap"><table><thead><tr><th>OT</th><th>Cliente</th><th>Motor</th><th>Mecánico</th><th>Estado</th><th>Total</th><th>Acción</th></tr></thead><tbody><tr><td>#1048</td><td>Rectificadora Omega</td><td>Motor diésel</td><td>Operario A</td><td><span class="badge blue">Recibido</span></td><td>$320.00</td><td><button class="btn btn-ghost">Ver</button></td></tr><tr><td>#1047</td><td>Taller El Pistón</td><td>Culata</td><td>Operario B</td><td><span class="badge orange">En proceso</span></td><td>$580.00</td><td><button class="btn btn-ghost">Ver</button></td></tr></tbody></table></div></div></div>
 <div class="screen" id="screen-nueva"><div class="panel"><h3>Nueva orden de trabajo <span class="badge orange">Registro rápido</span></h3><div class="form-grid"><div class="field"><label>Cliente</label><input value="Cliente referencial"></div><div class="field"><label>Placa / referencia</label><input value="ABC-1234"></div><div class="field"><label>Motor</label><select><option>Seleccionar motor</option><option>Motor diésel</option></select></div><div class="field"><label>Procedencia</label><select><option>Local</option><option>Externo</option></select></div><div class="field"><label>Mecánico responsable</label><input value="Operario asignado"></div><div class="field"><label>Fecha de ingreso</label><input value="02/06/2026 09:44"></div><div class="field"><label>Diagnóstico</label><textarea>Describe el problema del motor...</textarea></div><div class="field"><label>Observaciones</label><textarea>Notas internas del trabajo...</textarea></div></div><br><button class="btn btn-primary">Crear orden</button></div></div>
 <div class="screen" id="screen-pizarra"><div class="panel"><h3>Pizarra de producción <span class="badge green">Flujo diario</span></h3><div class="kpis"><div class="kpi"><span>Órdenes</span><b>12</b><small>en tablero</small></div><div class="kpi"><span>Entrega hoy</span><b>4</b><small>prioridad</small></div><div class="kpi"><span>Vencidas</span><b>2</b><small style="color:#f87171">revisar</small></div><div class="kpi"><span>Sin hora</span><b>3</b><small>programar</small></div></div><div class="cards-list"><div class="mini-card"><b>OT #1048</b><span>Motor diésel · Recibido · Técnico A</span></div><div class="mini-card"><b>OT #1047</b><span>Culata · En proceso · Técnico B</span></div><div class="mini-card"><b>OT #1046</b><span>Block · Terminado · Listo para entrega</span></div></div></div></div>
-<div class="screen" id="screen-detalle"><div class="panel"><h3>Orden #1048 <span class="badge blue">Recibido</span></h3><div class="kpis"><div class="kpi"><span>Total orden</span><b>$726.80</b><small>referencial</small></div><div class="kpi"><span>Abonado</span><b>$0.00</b><small>sin pagos</small></div><div class="kpi"><span>Saldo</span><b>$726.80</b><small style="color:#f87171">pendiente</small></div><div class="kpi"><span>Estado cuenta</span><b>Activo</b><small>controlado</small></div></div><div class="tabs"><button class="tab active" data-tab="mo">Mano de obra</button><button class="tab" data-tab="inv">Inventario</button><button class="tab" data-tab="rep">Repuestos</button><button class="tab" data-tab="img">Imágenes</button><button class="tab" data-tab="tec">Datos técnicos</button><button class="tab" data-tab="aud">Auditoría</button><button class="tab" data-tab="abo">Abonos</button></div><div class="subscreen active" id="tab-mo"><div class="table-wrap"><table><thead><tr><th>Trabajo</th><th>Cant.</th><th>P. Unit.</th><th>Total</th><th>Operario</th><th>Terminado</th></tr></thead><tbody><tr><td>Mandrilar bielas</td><td>2</td><td>$20.00</td><td>$40.00</td><td>Técnico A</td><td><span class="badge gray">No</span></td></tr><tr><td>Instalar pistones</td><td>4</td><td>$5.00</td><td>$20.00</td><td>Técnico B</td><td><span class="badge gray">No</span></td></tr></tbody></table></div></div><div class="subscreen" id="tab-inv"><div class="table-wrap"><table><thead><tr><th>Componente</th><th>Cantidad</th><th>Observación</th><th>Entregado</th><th>Revisado</th></tr></thead><tbody><tr><td>Cigüeñal</td><td>1</td><td>Sin novedad</td><td><span class="badge green">Sí</span></td><td><span class="badge blue">Revisado</span></td></tr><tr><td>Bielas</td><td>4</td><td>Control de piezas</td><td><span class="badge green">Sí</span></td><td><span class="badge orange">Pendiente</span></td></tr></tbody></table></div></div><div class="subscreen" id="tab-rep"><div class="table-wrap"><table><thead><tr><th>Repuesto</th><th>Cantidad</th><th>Precio</th><th>Total</th><th>Observación</th></tr></thead><tbody><tr><td>Chapa de biela</td><td>1</td><td>$0.00</td><td>$0.00</td><td>Referencia</td></tr><tr><td>Pistón</td><td>1</td><td>$0.00</td><td>$0.00</td><td>Referencia</td></tr></tbody></table></div></div><div class="subscreen" id="tab-img"><div class="photo-grid"><div class="photo">📷 Foto motor<br>Vista frontal</div><div class="photo">📷 Componentes<br>Internos</div><div class="photo">📷 Culata<br>Detalle</div><div class="photo">📷 Evidencia<br>Entrega</div></div></div><div class="subscreen" id="tab-tec"><div class="tech-grid"><div class="tech-card"><div class="tech-icon">◯</div><b>Diámetro cilindro</b><input value="87.50 mm"></div><div class="tech-card"><div class="tech-icon">⌁</div><b>Diámetro biela</b><input value="0.08 mm"></div><div class="tech-card"><div class="tech-icon">▭</div><b>Diámetro bancada</b><input value="0.09 mm"></div><div class="tech-card"><div class="tech-icon">⬡</div><b>Espesor culata</b><input value="134.00 mm"></div><div class="tech-card"><div class="tech-icon">↕</div><b>Altura vástago</b><input value="Referencia"></div><div class="tech-card"><div class="tech-icon">⌯</div><b>Asiento válvula</b><input value="Referencia"></div></div></div><div class="subscreen" id="tab-aud"><div class="timeline"><div class="event"><small>02/06 08:48</small><span>Imagen subida por usuario autorizado.</span></div><div class="event"><small>02/06 08:32</small><span>Actualización de totales de la orden.</span></div><div class="event"><small>02/06 08:22</small><span>Repuesto actualizado en la orden.</span></div></div></div><div class="subscreen" id="tab-abo"><div class="panel"><h3>Registro de abonos</h3><div class="form-grid"><div class="field"><label>Valor</label><input value="$0.00"></div><div class="field"><label>Observación</label><input value="Efectivo, transferencia..."></div></div><br><button class="btn btn-primary">Registrar abono</button></div></div></div></div>
-<div class="screen" id="screen-repuestos"><div class="panel"><h3>Artículos / Repuestos <span class="badge orange">Catálogo</span></h3><div class="table-wrap"><table><thead><tr><th>Código</th><th>Descripción</th><th>Categoría</th><th>Stock</th><th>P. Compra</th><th>P. Venta</th></tr></thead><tbody><tr><td>REP-021</td><td>Válvula de presión</td><td>Repuestos</td><td>12</td><td>$0.00</td><td>$0.00</td></tr><tr><td>REP-015</td><td>Válvula de admisión</td><td>Repuestos</td><td>8</td><td>$0.00</td><td>$0.00</td></tr></tbody></table></div></div></div>
-<div class="screen" id="screen-mano"><div class="panel"><h3>Mano de obra <span class="badge blue">Servicios técnicos</span></h3><div class="table-wrap"><table><thead><tr><th>ID</th><th>Descripción</th><th>Departamento</th><th>Operario</th><th>Campo motor</th><th>Cant. fija</th></tr></thead><tbody><tr><td>001</td><td>Alinear bancada</td><td>Bloques</td><td>Técnico Senior</td><td>Bancada</td><td>$50.00</td></tr><tr><td>002</td><td>Asentar válvulas</td><td>Cabezotes</td><td>Técnico Especialista</td><td>Válvulas</td><td>$5.00</td></tr></tbody></table></div></div></div>
-<div class="screen" id="screen-bodega"><div class="panel"><h3>Bodega — Ingresos / Egresos <span class="badge green">Kardex</span></h3><div class="form-grid"><div class="field"><label>Tipo</label><select><option>Ingreso</option><option>Egreso</option></select></div><div class="field"><label>Fecha</label><input value="02/06/2026"></div><div class="field"><label>Producto</label><input value="Código o descripción"></div><div class="field"><label>Cantidad</label><input value="1"></div></div><br><button class="btn btn-primary">Agregar movimiento</button></div></div>
-<div class="screen" id="screen-clientes"><div class="panel"><h3>Clientes <span class="badge blue">Base comercial</span></h3><div class="table-wrap"><table><thead><tr><th>Nombre</th><th>RUC</th><th>Teléfono</th><th>Email</th><th>Acción</th></tr></thead><tbody><tr><td>Comercial Automotriz Andina</td><td>XXXXXX001</td><td>09XXXXXXX</td><td>contacto@empresa.com</td><td><button class="btn btn-ghost">Editar</button></td></tr><tr><td>Taller El Pistón</td><td>XXXXXX002</td><td>09XXXXXXX</td><td>info@taller.com</td><td><button class="btn btn-ghost">Editar</button></td></tr></tbody></table></div></div></div>
-<div class="screen" id="screen-mecanicos"><div class="panel"><h3>Mecánicos <span class="badge green">Personal activo</span></h3><div class="table-wrap"><table><thead><tr><th>Nombre</th><th>Teléfono</th><th>Ciudad</th><th>Estado</th></tr></thead><tbody><tr><td>Técnico Senior A</td><td>09XXXXXXX</td><td>Ciudad 1</td><td><span class="badge green">Activo</span></td></tr><tr><td>Técnico Especialista B</td><td>09XXXXXXX</td><td>Ciudad 2</td><td><span class="badge green">Activo</span></td></tr></tbody></table></div></div></div>
-<div class="screen" id="screen-cobrar"><div class="panel"><h3>Cuentas por cobrar <span class="badge red">Control financiero</span></h3><div class="kpis"><div class="kpi"><span>Órdenes</span><b>13</b><small>pendientes</small></div><div class="kpi"><span>Valor total</span><b>$4.334</b><small>referencial</small></div><div class="kpi"><span>Abonado</span><b>$293</b><small>registrado</small></div><div class="kpi"><span>Saldo</span><b>$4.040</b><small style="color:#f87171">pendiente</small></div></div><div class="table-wrap"><table><thead><tr><th>OT</th><th>Cliente</th><th>Estado</th><th>Total</th><th>Abonado</th><th>Saldo</th></tr></thead><tbody><tr><td>#1048</td><td>Taller Central</td><td><span class="badge red">Pendiente</span></td><td>$720.00</td><td>$0.00</td><td>$720.00</td></tr><tr><td>#1047</td><td>Diesel Pro</td><td><span class="badge orange">Parcial</span></td><td>$580.00</td><td>$150.00</td><td>$430.00</td></tr></tbody></table></div></div></div>
-</section></div></div></section>
+<div class="screen" id="screen-detalle"><div class="panel"><h3>Orden #1048 <span class="badge blue">Recibido</span></h3><div class="kpis"><div class="kpi"><span>Total orden</span><b>$726.80</b><small>referencial</small></div><div class="kpi"><span>Abonado</span><b>$0.00</b><small>sin pagos</small></div><div class="kpi"><span>Saldo</span><b>$726.80</b><small style="color:#f87171">pendiente</small></div><div class="kpi"><span>Estado cuenta</span><b>Activo</b><small>controlado</small></div></div><div class="tabs"><button class="tab active" data-tab="mo">Mano de obra</button><button class="tab" data-tab="inv">Inventario</button><button class="tab" data-tab="rep">Repuestos</button><button class="tab" data-tab="img">Imágenes</button><button class="tab" data-tab="tec">Datos técnicos</button><button class="tab" data-tab="aud">Auditoría</button><button class="tab" data-tab="abo">Abonos</button></div><div class="subscreen active" id="tab-mo"><div class="table-wrap"><table><thead><tr><th>Trabajo</th><th>Cant.</th><th>P. Unit.</th><th>Total</th><th>Operario</th><th>Terminado</th></tr></thead><tbody><tr><td>Mandrilar bielas</td><td>2</td><td>$20.00</td><td>$40.00</td><td>Técnico A</td><td><span class="badge gray">No</span></td></tr><tr><td>Instalar pistones</td><td>4</td><td>$5.00</td><td>$20.00</td><td>Técnico B</td><td><span class="badge gray">No</span></td></tr></tbody></table></div></div><div class="subscreen" id="tab-inv"><div class="table-wrap"><table><thead><tr><th>Componente</th><th>Cantidad</th><th>Observación</th><th>Entregado</th><th>Revisado</th></tr></thead><tbody><tr><td>Cigüeñal</td><td>1</td><td>Sin novedad</td><td><span class="badge green">Sí</span></td><td><span class="badge blue">Revisado</span></td></tr><tr><td>Bielas</td><td>4</td><td>Control de piezas</td><td><span class="badge green">Sí</span></td><td><span class="badge orange">Pendiente</span></td></tr></tbody></table></div></div><div class="subscreen" id="tab-rep"><div class="table-wrap"><table><thead><tr><th>Repuesto</th><th>Cantidad</th><th>Precio</th><th>Total</th><th>Observación</th></tr></thead><tbody><tr><td>Chapa de biela</td><td>1</td><td>$0.00</td><td>$0.00</td><td>Referencia</td></tr><tr><td>Pistón</td><td>1</td><td>$0.00</td><td>$0.00</td><td>Referencia</td></tr></tbody></table></div></div><div class="subscreen" id="tab-img"><div class="photo-grid"><div class="photo">📷 Foto motor<br>Vista frontal</div><div class="photo">📷 Componentes<br>Internos</div><div class="photo">📷 Culata<br>Detalle</div><div class="photo">📷 Evidencia<br>Entrega</div></div></div><div class="subscreen" id="tab-tec"><div class="tech-grid"><div class="tech-card"><div class="tech-icon">◯</div><b>Diámetro cilindro</b><input value="87.50 mm"></div><div class="tech-card"><div class="tech-icon">⌁</div><b>Diámetro biela</b><input value="0.08 mm"></div><div class="tech-card"><div class="tech-icon">▭</div><
+<section class="section" id="explorar">
+  <div class="container">
+    <div class="section-title">
+      <h2>Vea Rectimatic en funcionamiento</h2>
+      <p>Deslice para explorar pantallas recreadas del sistema. Son vistas comerciales diseñadas para mostrar el flujo real sin exponer información privada.</p>
+    </div>
+
+    <div class="faux-carousel-wrap">
+      <button class="carousel-btn prev faux-prev" type="button" aria-label="Anterior">‹</button>
+
+      <div class="faux-carousel" id="fauxCarousel">
+        <article class="faux-slide">
+          <div class="faux-browser">
+            <div class="faux-top"><span class="faux-dot"></span><span class="faux-dot"></span><span class="faux-dot"></span><span class="faux-title">RECTIMATIC ERP · Dashboard</span></div>
+            <div class="faux-screen">
+              <div class="faux-kpis">
+                <div class="faux-kpi"><small>Órdenes</small><b>128</b></div><div class="faux-kpi"><small>En proceso</small><b>34</b></div><div class="faux-kpi"><small>Clientes</small><b>860</b></div><div class="faux-kpi"><small>Por cobrar</small><b>$8.420</b></div>
+              </div>
+              <div class="faux-layout"><div class="faux-panel"><h4>Últimas órdenes</h4><div class="faux-table"><div class="faux-row"><span class="faux-cell orange"></span><span class="faux-cell"></span><span class="faux-cell blue"></span><span class="faux-cell green"></span></div><div class="faux-row"><span class="faux-cell"></span><span class="faux-cell"></span><span class="faux-cell orange"></span><span class="faux-cell"></span></div><div class="faux-row"><span class="faux-cell"></span><span class="faux-cell blue"></span><span class="faux-cell"></span><span class="faux-cell orange"></span></div></div></div><div class="faux-panel"><h4>Estados</h4><div class="faux-chart"></div></div></div>
+            </div>
+          </div>
+          <div class="faux-slide-body"><div><h3>📊 Dashboard Ejecutivo</h3><p>Resumen visual de órdenes, clientes, producción, repuestos y cobranza.</p></div><button class="btn btn-primary" data-screen="inicio">Explorar módulo</button></div>
+        </article>
+
+        <article class="faux-slide">
+          <div class="faux-browser">
+            <div class="faux-top"><span class="faux-dot"></span><span class="faux-dot"></span><span class="faux-dot"></span><span class="faux-title">RECTIMATIC ERP · Órdenes</span></div>
+            <div class="faux-screen"><div class="faux-panel"><h4>Filtros de órdenes</h4><div class="faux-form"><div class="faux-input"></div><div class="faux-input"></div></div></div><div class="faux-panel"><h4>Listado de trabajos</h4><div class="faux-table"><div class="faux-row"><span class="faux-cell orange"></span><span class="faux-cell"></span><span class="faux-cell blue"></span><span class="faux-cell"></span></div><div class="faux-row"><span class="faux-cell"></span><span class="faux-cell orange"></span><span class="faux-cell"></span><span class="faux-cell green"></span></div><div class="faux-row"><span class="faux-cell blue"></span><span class="faux-cell"></span><span class="faux-cell"></span><span class="faux-cell orange"></span></div></div></div></div>
+          </div>
+          <div class="faux-slide-body"><div><h3>📋 Órdenes de Trabajo</h3><p>Control de ingreso, estado, motor, técnico, cliente, observaciones y valores.</p></div><button class="btn btn-primary" data-screen="ordenes">Explorar módulo</button></div>
+        </article>
+
+        <article class="faux-slide">
+          <div class="faux-browser">
+            <div class="faux-top"><span class="faux-dot"></span><span class="faux-dot"></span><span class="faux-dot"></span><span class="faux-title">RECTIMATIC ERP · Nueva OT</span></div>
+            <div class="faux-screen"><div class="faux-panel"><h4>Registro de nueva orden</h4><div class="faux-form"><div class="faux-input"></div><div class="faux-input"></div><div class="faux-input"></div><div class="faux-input"></div><div class="faux-input big"></div></div></div></div>
+          </div>
+          <div class="faux-slide-body"><div><h3>➕ Nueva Orden</h3><p>Formulario rápido para registrar cliente, motor, responsable, diagnóstico y observaciones.</p></div><button class="btn btn-primary" data-screen="nueva">Explorar módulo</button></div>
+        </article>
+
+        <article class="faux-slide">
+          <div class="faux-browser">
+            <div class="faux-top"><span class="faux-dot"></span><span class="faux-dot"></span><span class="faux-dot"></span><span class="faux-title">RECTIMATIC ERP · Pizarra</span></div>
+            <div class="faux-screen"><div class="faux-kanban"><div class="faux-col"><h4>Recibido</h4><div class="faux-ticket"></div><div class="faux-ticket"></div></div><div class="faux-col"><h4>En proceso</h4><div class="faux-ticket"></div><div class="faux-ticket"></div></div><div class="faux-col"><h4>Terminado</h4><div class="faux-ticket"></div></div></div></div>
+          </div>
+          <div class="faux-slide-body"><div><h3>🧩 Pizarra Operativa</h3><p>Vista tipo tablero para controlar trabajos, prioridades, entregas y atrasos.</p></div><button class="btn btn-primary" data-screen="pizarra">Explorar módulo</button></div>
+        </article>
+
+        <article class="faux-slide">
+          <div class="faux-browser">
+            <div class="faux-top"><span class="faux-dot"></span><span class="faux-dot"></span><span class="faux-dot"></span><span class="faux-title">RECTIMATIC ERP · Datos técnicos</span></div>
+            <div class="faux-screen"><div class="faux-tech"><div class="faux-tech-card"><div class="icon">◯</div><b>Cilindro</b><div class="value"></div></div><div class="faux-tech-card"><div class="icon">⌁</div><b>Biela</b><div class="value"></div></div><div class="faux-tech-card"><div class="icon">▭</div><b>Bancada</b><div class="value"></div></div><div class="faux-tech-card"><div class="icon">⬡</div><b>Culata</b><div class="value"></div></div><div class="faux-tech-card"><div class="icon">↕</div><b>Vástago</b><div class="value"></div></div><div class="faux-tech-card"><div class="icon">⌯</div><b>Válvula</b><div class="value"></div></div></div></div>
+          </div>
+          <div class="faux-slide-body"><div><h3>📐 Datos Técnicos</h3><p>Mediciones críticas del motor: cilindros, biela, bancada, culata y válvulas.</p></div><button class="btn btn-primary" data-screen="detalle" data-tab-target="tec">Explorar módulo</button></div>
+        </article>
+
+        <article class="faux-slide">
+          <div class="faux-browser">
+            <div class="faux-top"><span class="faux-dot"></span><span class="faux-dot"></span><span class="faux-dot"></span><span class="faux-title">RECTIMATIC ERP · Evidencias</span></div>
+            <div class="faux-screen"><div class="faux-photos"><div class="faux-photo">📷</div><div class="faux-photo">🔧</div><div class="faux-photo">⚙️</div><div class="faux-photo">🧩</div></div><div class="faux-panel"><h4>Historial visual del trabajo</h4><div class="faux-table"><div class="faux-row"><span class="faux-cell orange"></span><span class="faux-cell"></span><span class="faux-cell blue"></span><span class="faux-cell"></span></div><div class="faux-row"><span class="faux-cell"></span><span class="faux-cell"></span><span class="faux-cell green"></span><span class="faux-cell"></span></div></div></div></div>
+          </div>
+          <div class="faux-slide-body"><div><h3>📷 Evidencia Fotográfica</h3><p>Documentación visual de piezas, avances, respaldo técnico y entrega.</p></div><button class="btn btn-primary" data-screen="detalle" data-tab-target="img">Explorar módulo</button></div>
+        </article>
+
+        <article class="faux-slide">
+          <div class="faux-browser">
+            <div class="faux-top"><span class="faux-dot"></span><span class="faux-dot"></span><span class="faux-dot"></span><span class="faux-title">RECTIMATIC ERP · Cobranza</span></div>
+            <div class="faux-screen"><div class="faux-kpis"><div class="faux-kpi"><small>Órdenes</small><b>13</b></div><div class="faux-kpi"><small>Total</small><b>$4.334</b></div><div class="faux-kpi"><small>Abonado</small><b>$293</b></div><div class="faux-kpi"><small>Saldo</small><b>$4.040</b></div></div><div class="faux-panel"><h4>Cuentas por cobrar</h4><div class="faux-table"><div class="faux-row"><span class="faux-cell orange"></span><span class="faux-cell"></span><span class="faux-cell blue"></span><span class="faux-cell"></span></div><div class="faux-row"><span class="faux-cell"></span><span class="faux-cell orange"></span><span class="faux-cell"></span><span class="faux-cell green"></span></div></div></div></div>
+          </div>
+          <div class="faux-slide-body"><div><h3>💵 Cuentas por Cobrar</h3><p>Control de saldos, abonos, estados de cuenta y seguimiento financiero.</p></div><button class="btn btn-primary" data-screen="cobrar">Explorar módulo</button></div>
+        </article>
+      </div>
+
+      <button class="carousel-btn next faux-next" type="button" aria-label="Siguiente">›</button>
+      <div class="faux-dots" id="fauxDots"><button class="active"></button><button></button><button></button><button></button><button></button><button></button><button></button></div>
+    </div>
+  </div>
+</section>
+uestos y cuentas por cobrar.</p>
+          <button class="btn btn-ghost" data-screen="inicio">Ver módulo</button>
+        </article>
+
+        <article class="module-slide">
+          <div class="slide-screen">
+            <div class="slide-top">ÓRDENES DE TRABAJO</div>
+            <div class="slide-lines">
+              <div class="fake-line orange"></div><div class="fake-line"></div><div class="fake-line short"></div><div class="fake-line blue"></div>
+            </div>
+          </div>
+          <h3>📋 Órdenes de Trabajo</h3>
+          <p>Controla ingreso, estados, cliente, motor, técnico, observaciones y valores de cada OT.</p>
+          <button class="btn btn-ghost" data-screen="ordenes">Ver módulo</button>
+        </article>
+
+        <article class="module-slide">
+          <div class="slide-screen">
+            <div class="slide-top">DETALLE DE OT</div>
+            <div class="fake-grid">
+              <div class="fake-box">Mano Obra</div><div class="fake-box">Repuestos</div>
+              <div class="fake-box">Fotos</div><div class="fake-box">Abonos</div>
+            </div>
+          </div>
+          <h3>🔎 Detalle Técnico</h3>
+          <p>Consulta mano de obra, inventario, repuestos, imágenes, datos técnicos, auditoría y abonos.</p>
+          <button class="btn btn-ghost" data-screen="detalle">Ver módulo</button>
+        </article>
+
+        <article class="module-slide">
+          <div class="slide-screen">
+            <div class="slide-top">PIZARRA OPERATIVA</div>
+            <div class="fake-grid">
+              <div class="fake-box">Recibido</div><div class="fake-box">Proceso</div>
+              <div class="fake-box">Entrega</div><div class="fake-box">Atrasos</div>
+            </div>
+          </div>
+          <h3>🧩 Pizarra de Producción</h3>
+          <p>Visualiza trabajos pendientes, en proceso, entregas del día y prioridades del taller.</p>
+          <button class="btn btn-ghost" data-screen="pizarra">Ver módulo</button>
+        </article>
+
+        <article class="module-slide">
+          <div class="slide-screen">
+            <div class="slide-top">DATOS TÉCNICOS</div>
+            <div class="fake-grid">
+              <div class="fake-box">Cilindro</div><div class="fake-box">Biela</div>
+              <div class="fake-box">Bancada</div><div class="fake-box">Culata</div>
+            </div>
+          </div>
+          <h3>📐 Datos Técnicos</h3>
+          <p>Registra mediciones críticas del motor como cilindros, bancada, biela, culata y válvulas.</p>
+          <button class="btn btn-ghost" data-screen="detalle" data-tab-target="tec">Ver módulo</button>
+        </article>
+
+        <article class="module-slide">
+          <div class="slide-screen">
+            <div class="slide-top">EVIDENCIAS</div>
+            <div class="fake-grid">
+              <div class="fake-box">Foto 1</div><div class="fake-box">Foto 2</div>
+              <div class="fake-box">Foto 3</div><div class="fake-box">Foto 4</div>
+            </div>
+          </div>
+          <h3>📷 Evidencia Fotográfica</h3>
+          <p>Documenta el estado del motor, piezas recibidas, avances y respaldos visuales.</p>
+          <button class="btn btn-ghost" data-screen="detalle" data-tab-target="img">Ver módulo</button>
+        </article>
+
+        <article class="module-slide">
+          <div class="slide-screen">
+            <div class="slide-top">BODEGA / KARDEX</div>
+            <div class="slide-lines">
+              <div class="fake-line blue"></div><div class="fake-line"></div><div class="fake-line orange"></div><div class="fake-line short"></div>
+            </div>
+          </div>
+          <h3>↔️ Bodega y Kardex</h3>
+          <p>Controla ingresos, egresos, movimientos internos y disponibilidad de artículos.</p>
+          <button class="btn btn-ghost" data-screen="bodega">Ver módulo</button>
+        </article>
+
+        <article class="module-slide">
+          <div class="slide-screen">
+            <div class="slide-top">COBRANZA</div>
+            <div class="fake-grid">
+              <div class="fake-box">Total</div><div class="fake-box">Abonado</div>
+              <div class="fake-box">Saldo</div><div class="fake-box">Estado</div>
+            </div>
+          </div>
+          <h3>💵 Cuentas por Cobrar</h3>
+          <p>Controla saldos, abonos, estados de cuenta y seguimiento financiero por orden.</p>
+          <button class="btn btn-ghost" data-screen="cobrar">Ver módulo</button>
+        </article>
+      </div>
+
+      <button class="carousel-btn next" type="button" aria-label="Siguiente">›</button>
+
+      <div class="carousel-dots" id="carouselDots">
+        <button class="active" type="button"></button><button type="button"></button><button type="button"></button><button type="button"></button>
+        <button type="button"></button><button type="button"></button><button type="button"></button><button type="button"></button>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="section" id="movilidad"><div class="container"><div class="section-title"><h2>Acceso desde cualquier dispositivo</h2><p>Consulte órdenes, clientes, inventario, producción y reportes desde computadora, tablet o teléfono móvil.</p></div><div class="mobile-wrap"><div class="mobile-features"><div class="mobile-feature"><h3>📊 Dashboard ejecutivo</h3><p>Visualice órdenes activas, cuentas por cobrar, clientes, producción y métricas clave.</p></div><div class="mobile-feature"><h3>🔧 Órdenes de trabajo</h3><p>Consulte el avance de cada trabajo, fotografías, mano de obra, repuestos y observaciones.</p></div><div class="mobile-feature"><h3>📦 Inventario y repuestos</h3><p>Controle existencias, movimientos, ingresos, egresos y disponibilidad.</p></div><div class="benefits-row"><span class="benefit">☁️ Acceso en línea</span><span class="benefit">🔒 Información segura</span><span class="benefit">⚡ Tiempo real</span><span class="benefit">📱 Compatible</span></div></div><div class="phones"><div class="phone side"><div class="phone-screen"><div class="phone-head">PANEL</div><div class="phone-body"><div class="phone-metric pm1">860<br>CLIENTES</div><div class="phone-metric pm2">34<br>EN PROCESO</div><div class="phone-metric pm3">128<br>ÓRDENES</div></div></div></div><div class="phone"><div class="phone-screen"><div class="phone-head">ORDEN DE TRABAJO</div><div class="phone-body"><b>Datos del cliente</b><div class="line"></div><div class="line short"></div><b>Detalle del motor</b><div class="line"></div><div class="line"></div><div class="phone-photo">📷 Evidencia</div></div></div></div><div class="phone side"><div class="phone-screen"><div class="phone-head">FINANZAS</div><div class="phone-body"><div class="phone-metric pm4">$8.420<br>POR COBRAR</div><div class="line"></div><div class="line"></div><div class="line short"></div></div></div></div></div></div></div></section>
 
@@ -133,5 +388,46 @@ footer{padding:40px 0;color:var(--muted);border-top:1px solid rgba(255,122,0,.16
 const titles={inicio:['Dashboard','Resumen operativo y financiero'],ordenes:['Órdenes de trabajo','Control de trabajos, estados y seguimiento'],nueva:['Nueva orden','Registro de ingreso de trabajo'],detalle:['Detalle de orden','Proceso técnico, evidencia, abonos y auditoría'],pizarra:['Pizarra operativa','Vista diaria de producción'],repuestos:['Artículos / Repuestos','Catálogo e inventario'],mano:['Mano de obra','Servicios técnicos y operarios'],bodega:['Bodega','Ingresos, egresos, stock y kardex'],clientes:['Clientes','Base comercial de empresas y contactos'],mecanicos:['Mecánicos','Personal técnico y estado de actividad'],cobrar:['Cuentas por cobrar','Control de saldos y abonos']};
 document.querySelectorAll('[data-screen]').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('[data-screen]').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const key=btn.dataset.screen;document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById('screen-'+key).classList.add('active');document.getElementById('screenTitle').textContent=titles[key][0];document.getElementById('screenSub').textContent=titles[key][1];});});
 document.querySelectorAll('[data-tab]').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('[data-tab]').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.subscreen').forEach(s=>s.classList.remove('active'));document.getElementById('tab-'+btn.dataset.tab).classList.add('active');});});
+
+
+function setupFauxCarousel(){
+  const track=document.getElementById('fauxCarousel');
+  if(!track) return;
+  const slides=Array.from(track.children);
+  const dots=Array.from(document.querySelectorAll('#fauxDots button'));
+  const prev=document.querySelector('.faux-prev');
+  const next=document.querySelector('.faux-next');
+  function current(){
+    const center=track.scrollLeft+track.clientWidth/2;
+    let closest=0,min=Infinity;
+    slides.forEach((s,i)=>{const c=s.offsetLeft+s.clientWidth/2;const d=Math.abs(center-c);if(d<min){min=d;closest=i;}});
+    return closest;
+  }
+  function go(i){
+    const s=slides[i];
+    track.scrollTo({left:s.offsetLeft-(track.clientWidth-s.clientWidth)/2,behavior:'smooth'});
+    dots.forEach((d,idx)=>d.classList.toggle('active',idx===i));
+  }
+  if(prev) prev.addEventListener('click',()=>go(Math.max(0,current()-1)));
+  if(next) next.addEventListener('click',()=>go(Math.min(slides.length-1,current()+1)));
+  dots.forEach((dot,i)=>dot.addEventListener('click',()=>go(i)));
+  track.addEventListener('scroll',()=>{const i=current();dots.forEach((d,idx)=>d.classList.toggle('active',idx===i));});
+  let drag=false,startX=0,startLeft=0;
+  track.addEventListener('mousedown',e=>{drag=true;startX=e.pageX;startLeft=track.scrollLeft;});
+  track.addEventListener('mouseleave',()=>drag=false);
+  track.addEventListener('mouseup',()=>drag=false);
+  track.addEventListener('mousemove',e=>{if(!drag)return;e.preventDefault();track.scrollLeft=startLeft-(e.pageX-startX)*1.25;});
+  document.querySelectorAll('.faux-slide [data-screen]').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const key=btn.dataset.screen;
+      const sideButton=document.querySelector('.sidebar [data-screen="'+key+'"]');
+      if(sideButton) sideButton.click();
+      document.getElementById('dashboard').scrollIntoView({behavior:'smooth'});
+      const tabKey=btn.dataset.tabTarget;
+      if(tabKey){setTimeout(()=>{const tab=document.querySelector('[data-tab="'+tabKey+'"]'); if(tab) tab.click();},350);}
+    });
+  });
+}
+setupFauxCarousel();
 new Chart(document.getElementById('estadoChart'),{type:'doughnut',data:{labels:['Recibido','En proceso','Terminado'],datasets:[{data:[17,9,6],backgroundColor:['#38bdf8','#ff7a00','#22c55e'],borderWidth:0}]},options:{plugins:{legend:{position:'bottom',labels:{color:'#dce3f4'}}},cutout:'66%'}});
 </script></body></html>
