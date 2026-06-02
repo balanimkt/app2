@@ -596,6 +596,174 @@ footer{padding:40px 0;color:var(--muted);border-top:1px solid rgba(255,122,0,.16
   }
 }
 
+
+/* ===== MEJORA VISUAL DE TELÉFONOS: escritorio + móvil ===== */
+.phone-screen{
+  background:#07101f !important;
+  color:#fff !important;
+}
+
+.phone-head{
+  padding:28px 12px 12px !important;
+  font-size:.78rem;
+  letter-spacing:.8px;
+}
+
+.phone-body{
+  padding:14px !important;
+  gap:10px !important;
+}
+
+.phone-mini-kpis{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:8px;
+}
+
+.phone-mini-kpi{
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.07);
+  border-radius:13px;
+  padding:10px;
+}
+
+.phone-mini-kpi small{
+  display:block;
+  color:#9aa4b8;
+  font-size:.58rem;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+}
+
+.phone-mini-kpi b{
+  display:block;
+  font-size:1rem;
+  margin-top:5px;
+  color:#fff;
+}
+
+.phone-mini-list{
+  display:grid;
+  gap:8px;
+}
+
+.phone-mini-item{
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.06);
+  border-radius:13px;
+  padding:9px;
+}
+
+.phone-mini-item strong{
+  display:block;
+  font-size:.72rem;
+  color:#fff;
+}
+
+.phone-mini-item span{
+  display:block;
+  font-size:.62rem;
+  color:#9aa4b8;
+  margin-top:3px;
+}
+
+.phone-mini-badge{
+  display:inline-flex;
+  margin-top:6px;
+  border-radius:999px;
+  padding:4px 7px;
+  font-size:.55rem;
+  font-weight:900;
+  font-style:normal;
+}
+
+.phone-mini-badge.blue{background:rgba(56,189,248,.16);color:#38bdf8}
+.phone-mini-badge.orange{background:rgba(255,122,0,.16);color:#ffb365}
+.phone-mini-badge.green{background:rgba(34,197,94,.16);color:#22c55e}
+.phone-mini-badge.red{background:rgba(239,68,68,.16);color:#f87171}
+
+.phone-mini-chart{
+  width:118px;
+  height:118px;
+  border-radius:50%;
+  margin:8px auto;
+  background:
+    radial-gradient(circle at center,#07101f 0 43%,transparent 44%),
+    conic-gradient(#38bdf8 0 42%, #ff7a00 42% 68%, #22c55e 68% 100%);
+  display:grid;
+  place-items:center;
+  box-shadow:0 0 22px rgba(255,122,0,.12);
+}
+
+.phone-mini-chart div{
+  text-align:center;
+  font-size:.62rem;
+  color:#9aa4b8;
+}
+
+.phone-mini-chart b{
+  display:block;
+  color:#fff;
+  font-size:1.25rem;
+}
+
+.phone-mini-form{
+  display:grid;
+  gap:8px;
+}
+
+.phone-mini-input{
+  height:22px;
+  border-radius:8px;
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.06);
+}
+
+.phone-mini-input.short{
+  width:66%;
+}
+
+.phone-mini-photo{
+  height:68px;
+  border-radius:14px;
+  background:linear-gradient(135deg,rgba(255,122,0,.75),rgba(56,189,248,.35)),#111827;
+  border:1px solid rgba(255,255,255,.10);
+  display:grid;
+  place-items:center;
+  color:#fff;
+  font-weight:900;
+  font-size:.75rem;
+}
+
+.phone-mini-table{
+  display:grid;
+  gap:7px;
+}
+
+.phone-mini-row{
+  display:grid;
+  grid-template-columns:.8fr 1fr .7fr;
+  gap:6px;
+}
+
+.phone-mini-cell{
+  height:18px;
+  border-radius:7px;
+  background:rgba(255,255,255,.12);
+}
+
+.phone-mini-cell.orange{background:rgba(255,122,0,.48)}
+.phone-mini-cell.blue{background:rgba(56,189,248,.34)}
+.phone-mini-cell.green{background:rgba(34,197,94,.34)}
+
+@media(max-width:620px){
+  .phone-body{padding:13px !important}
+  .phone-mini-chart{
+    width:108px;
+    height:108px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -764,10 +932,91 @@ footer{padding:40px 0;color:var(--muted);border-top:1px solid rgba(255,122,0,.16
 <section class="section" id="movilidad"><div class="container"><div class="section-title"><h2>Acceso desde cualquier dispositivo</h2><p>Consulte órdenes, clientes, inventario, producción y reportes desde computadora, tablet o teléfono móvil.</p></div><div class="mobile-wrap"><div class="mobile-features"><div class="mobile-feature"><h3>📊 Dashboard ejecutivo</h3><p>Visualice órdenes activas, cuentas por cobrar, clientes, producción y métricas clave.</p></div><div class="mobile-feature"><h3>🔧 Órdenes de trabajo</h3><p>Consulte el avance de cada trabajo, fotografías, mano de obra, repuestos y observaciones.</p></div><div class="mobile-feature"><h3>📦 Inventario y repuestos</h3><p>Controle existencias, movimientos, ingresos, egresos y disponibilidad.</p></div><div class="benefits-row"><span class="benefit">☁️ Acceso en línea</span><span class="benefit">🔒 Información segura</span><span class="benefit">⚡ Tiempo real</span><span class="benefit">📱 Compatible</span></div></div><div class="phone-carousel-wrap">
   <button class="phone-arrow prev" type="button" aria-label="Anterior">‹</button>
   <div class="phone-carousel" id="phoneCarousel">
-    <div class="phone-card"><div class="phone"><div class="phone-screen"><div class="phone-head">PANEL</div><div class="phone-body"><div class="phone-metric pm1">860<br>CLIENTES</div><div class="phone-metric pm2">34<br>EN PROCESO</div><div class="phone-metric pm3">128<br>ÓRDENES</div></div></div></div></div>
-    <div class="phone-card"><div class="phone"><div class="phone-screen"><div class="phone-head">ORDEN DE TRABAJO</div><div class="phone-body"><b>Datos del cliente</b><div class="line"></div><div class="line short"></div><b>Detalle del motor</b><div class="line"></div><div class="line"></div><div class="phone-photo">📷 Evidencia</div></div></div></div></div>
-    <div class="phone-card"><div class="phone"><div class="phone-screen"><div class="phone-head">FINANZAS</div><div class="phone-body"><div class="phone-metric pm4">$8.420<br>POR COBRAR</div><div class="line"></div><div class="line"></div><div class="line short"></div></div></div></div></div>
-    <div class="phone-card"><div class="phone"><div class="phone-screen"><div class="phone-head">INVENTARIO</div><div class="phone-body"><div class="phone-metric pm2">Stock<br>Activo</div><div class="line"></div><div class="line"></div><div class="phone-photo">📦 Repuestos</div></div></div></div></div>
+    <div class="phone-card">
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="phone-head">DASHBOARD</div>
+          <div class="phone-body">
+            <div class="phone-mini-kpis">
+              <div class="phone-mini-kpi"><small>Órdenes</small><b>128</b></div>
+              <div class="phone-mini-kpi"><small>Proceso</small><b>34</b></div>
+              <div class="phone-mini-kpi"><small>Clientes</small><b>860</b></div>
+              <div class="phone-mini-kpi"><small>Cobrar</small><b>$8.4k</b></div>
+            </div>
+            <div class="phone-mini-chart"><div>Total<b>128</b></div></div>
+            <div class="phone-mini-list">
+              <div class="phone-mini-item"><strong>OT #1048</strong><span>Motor diésel · Taller Central</span><em class="phone-mini-badge blue">Recibido</em></div>
+              <div class="phone-mini-item"><strong>OT #1047</strong><span>Culata · Diesel Pro</span><em class="phone-mini-badge orange">En proceso</em></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="phone-card">
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="phone-head">ORDEN DE TRABAJO</div>
+          <div class="phone-body">
+            <div class="phone-mini-form">
+              <div class="phone-mini-input"></div>
+              <div class="phone-mini-input short"></div>
+              <div class="phone-mini-input"></div>
+              <div class="phone-mini-input"></div>
+            </div>
+            <div class="phone-mini-list">
+              <div class="phone-mini-item"><strong>Cliente referencial</strong><span>Motor gasolina 2.0</span><em class="phone-mini-badge blue">OT nueva</em></div>
+              <div class="phone-mini-item"><strong>Técnico asignado</strong><span>Diagnóstico y observaciones</span><em class="phone-mini-badge green">Registrado</em></div>
+            </div>
+            <div class="phone-mini-photo">📷 Evidencia</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="phone-card">
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="phone-head">INVENTARIO</div>
+          <div class="phone-body">
+            <div class="phone-mini-kpis">
+              <div class="phone-mini-kpi"><small>Stock</small><b>240</b></div>
+              <div class="phone-mini-kpi"><small>Bajo</small><b>12</b></div>
+            </div>
+            <div class="phone-mini-list">
+              <div class="phone-mini-item"><strong>Válvula admisión</strong><span>Repuestos · Stock activo</span><em class="phone-mini-badge green">Disponible</em></div>
+              <div class="phone-mini-item"><strong>Pistón estándar</strong><span>Motor · Movimiento reciente</span><em class="phone-mini-badge orange">Bajo</em></div>
+              <div class="phone-mini-item"><strong>Bodega</strong><span>Ingreso / egreso / kardex</span><em class="phone-mini-badge blue">Control</em></div>
+            </div>
+            <div class="phone-mini-table">
+              <div class="phone-mini-row"><span class="phone-mini-cell orange"></span><span class="phone-mini-cell"></span><span class="phone-mini-cell green"></span></div>
+              <div class="phone-mini-row"><span class="phone-mini-cell blue"></span><span class="phone-mini-cell"></span><span class="phone-mini-cell"></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="phone-card">
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="phone-head">FINANZAS</div>
+          <div class="phone-body">
+            <div class="phone-mini-kpis">
+              <div class="phone-mini-kpi"><small>Total</small><b>$4.3k</b></div>
+              <div class="phone-mini-kpi"><small>Saldo</small><b>$4.0k</b></div>
+              <div class="phone-mini-kpi"><small>Abonos</small><b>$293</b></div>
+              <div class="phone-mini-kpi"><small>Cuentas</small><b>13</b></div>
+            </div>
+            <div class="phone-mini-list">
+              <div class="phone-mini-item"><strong>OT #1048</strong><span>Taller Central · saldo pendiente</span><em class="phone-mini-badge red">Pendiente</em></div>
+              <div class="phone-mini-item"><strong>OT #1047</strong><span>Diesel Pro · pago parcial</span><em class="phone-mini-badge orange">Parcial</em></div>
+              <div class="phone-mini-item"><strong>Reporte</strong><span>Cuentas por cobrar</span><em class="phone-mini-badge green">Actualizado</em></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
     <button class="phone-arrow next" type="button" aria-label="Siguiente">›</button>
 <div class="phone-nav" id="phoneDots"><button class="active" type="button"></button><button type="button"></button><button type="button"></button><button type="button"></button></div>
