@@ -98,6 +98,143 @@ footer{padding:40px 0;color:var(--muted);border-top:1px solid rgba(255,122,0,.16
 @media(max-width:1100px){.dashboard-grid,.mobile-wrap{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(2,1fr)}.tech-grid,.photo-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:980px){.menu{display:none}.hero-grid{grid-template-columns:1fr}.module-grid,.steps,.pricing{grid-template-columns:repeat(2,1fr)}.demo-app{grid-template-columns:1fr}.sidebar{display:grid;grid-template-columns:repeat(2,1fr);gap:4px}.side-brand,.side-section{grid-column:1/-1}.app-main{padding:18px}h1{letter-spacing:-1px}.cards-list{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.plan.featured{transform:none}}
 @media(max-width:620px){.module-grid,.kpis,.sidebar,.tech-grid,.photo-grid,.steps,.pricing{grid-template-columns:1fr}.hero{padding-top:54px}table{min-width:650px}.event{grid-template-columns:1fr}.phones{gap:8px}.phone{width:180px;height:360px}.phone.side{display:none}}
+
+/* ===== MEJORAS SEGURAS V2: contadores, beneficios, teléfonos y planes premium ===== */
+.trust-strip{
+  padding:28px 0 4px;
+}
+.trust-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+.trust-item{
+  border:1px solid rgba(255,122,0,.22);
+  background:rgba(255,255,255,.045);
+  border-radius:22px;
+  padding:22px;
+  text-align:center;
+  box-shadow:0 0 32px rgba(255,122,0,.06);
+}
+.trust-item b{
+  display:block;
+  color:var(--orange);
+  font-size:2.3rem;
+  line-height:1;
+  text-shadow:0 0 24px rgba(255,122,0,.35);
+}
+.trust-item span{
+  display:block;
+  color:var(--muted);
+  margin-top:10px;
+  font-size:.9rem;
+  font-weight:800;
+  letter-spacing:.4px;
+}
+.why-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+.why-card{
+  border:1px solid rgba(255,122,0,.20);
+  background:linear-gradient(180deg,rgba(255,122,0,.075),rgba(255,255,255,.04));
+  border-radius:24px;
+  padding:26px;
+  transition:.25s;
+}
+.why-card:hover{
+  transform:translateY(-5px);
+  border-color:rgba(255,122,0,.55);
+  box-shadow:0 0 44px rgba(255,122,0,.12);
+}
+.why-card .why-icon{
+  width:54px;
+  height:54px;
+  display:grid;
+  place-items:center;
+  border-radius:16px;
+  background:rgba(255,122,0,.12);
+  font-size:1.6rem;
+  margin-bottom:16px;
+}
+.why-card h3{
+  margin-bottom:10px;
+}
+.why-card p{
+  color:var(--muted);
+  line-height:1.6;
+}
+.phone-carousel-wrap{
+  position:relative;
+  width:100%;
+  overflow:hidden;
+}
+.phone-carousel{
+  display:flex;
+  gap:18px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;
+  scrollbar-width:none;
+  -webkit-overflow-scrolling:touch;
+  padding:20px 12px 28px;
+  cursor:grab;
+}
+.phone-carousel::-webkit-scrollbar{display:none}
+.phone-carousel:active{cursor:grabbing}
+.phone-card{
+  flex:0 0 210px;
+  scroll-snap-align:center;
+}
+.phone-card .phone{
+  margin:auto;
+}
+.phone-nav{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-top:4px;
+}
+.phone-nav button{
+  width:11px;
+  height:11px;
+  border-radius:50%;
+  border:0;
+  background:rgba(255,255,255,.25);
+  cursor:pointer;
+}
+.phone-nav button.active{
+  background:var(--orange);
+  box-shadow:0 0 18px rgba(255,122,0,.8);
+}
+.plan .plan-badge{
+  position:absolute;
+  top:18px;
+  right:18px;
+  border-radius:999px;
+  padding:7px 10px;
+  background:rgba(255,122,0,.15);
+  color:#ffb365;
+  font-size:.68rem;
+  font-weight:900;
+  letter-spacing:.8px;
+}
+.plan.featured .plan-badge{
+  background:linear-gradient(135deg,var(--orange),var(--red));
+  color:white;
+}
+.plan .btn{
+  width:100%;
+}
+@media(max-width:980px){
+  .trust-grid,.why-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:620px){
+  .trust-grid,.why-grid{grid-template-columns:1fr}
+  .phone-card{flex-basis:78vw}
+}
+
 </style>
 </head>
 <body>
@@ -105,7 +242,37 @@ footer{padding:40px 0;color:var(--muted);border-top:1px solid rgba(255,122,0,.16
 <main id="inicio">
 <section class="hero"><div class="container hero-grid"><div><div class="tag">⚙️ SOFTWARE ESPECIALIZADO PARA RECTIFICADORAS</div><h1>Controle su rectificadora desde <span class="gradient">una sola plataforma</span></h1><p>Rectimatic ERP permite administrar órdenes de trabajo, procesos de rectificación, inventario, evidencia fotográfica, datos técnicos, cuentas por cobrar y reportes operativos desde un entorno profesional.</p><div class="actions"><a class="btn btn-primary" href="#dashboard">Probar vista interactiva</a><a class="btn btn-ghost" href="#planes">Ver planes</a></div></div><div class="login-card"><div class="login-box"><div class="brand" style="margin-bottom:22px;"><div class="brand-mark">RS4</div><div><strong>Acceso empresarial</strong><small>Panel de control</small></div></div><h3>Ingreso seguro</h3><p>Acceso para administradores, operarios y personal autorizado.</p><input class="input" value="empresa@rectificadora.com"><input class="input" value="••••••••••"><a class="btn btn-primary" href="#dashboard" style="width:100%;">Entrar al panel</a><p style="font-size:.82rem;margin:16px 0 0;">Plataforma online bajo modelo de suscripción.</p></div></div></div></section>
 
+<section class="trust-strip">
+  <div class="container">
+    <div class="trust-grid">
+      <div class="trust-item"><b>10+</b><span>Módulos integrados</span></div>
+      <div class="trust-item"><b>100%</b><span>Enfocado en rectificadoras</span></div>
+      <div class="trust-item"><b>24/7</b><span>Acceso en línea</span></div>
+      <div class="trust-item"><b>SaaS</b><span>Suscripción mensual</span></div>
+    </div>
+  </div>
+</section>
+
+
 <section class="section" id="modulos"><div class="container"><div class="section-title"><h2>Diseñado para el flujo real de una rectificadora</h2><p>No es un sistema genérico. Sus módulos están pensados para controlar motores, procesos, técnicos, repuestos, mediciones y pagos.</p></div><div class="module-grid"><article class="module"><div class="module-icon">📋</div><h3>Órdenes de trabajo</h3><p>Ingreso, seguimiento, estados, edición y control completo de OT.</p></article><article class="module"><div class="module-icon">🧩</div><h3>Pizarra operativa</h3><p>Visualización rápida de trabajos, entregas y atrasos.</p></article><article class="module"><div class="module-icon">🔧</div><h3>Mano de obra</h3><p>Servicios de rectificación, operarios, costos y cantidades.</p></article><article class="module"><div class="module-icon">📦</div><h3>Inventario y bodega</h3><p>Repuestos, movimientos, stock, kardex e ingresos/egresos.</p></article><article class="module"><div class="module-icon">📷</div><h3>Evidencia fotográfica</h3><p>Registro visual del motor y sus componentes.</p></article><article class="module"><div class="module-icon">📐</div><h3>Datos técnicos</h3><p>Mediciones de cilindro, biela, bancada, válvulas y culata.</p></article><article class="module"><div class="module-icon">💰</div><h3>Finanzas</h3><p>Facturas, abonos, saldos y cuentas por cobrar.</p></article><article class="module"><div class="module-icon">🕵️</div><h3>Auditoría</h3><p>Historial de acciones, cambios, subidas y modificaciones.</p></article></div></div></section>
+
+
+<section class="section" id="beneficios">
+  <div class="container">
+    <div class="section-title">
+      <h2>¿Por qué elegir Rectimatic?</h2>
+      <p>Una plataforma especializada que ayuda a ordenar el taller, controlar procesos y mejorar la administración diaria.</p>
+    </div>
+    <div class="why-grid">
+      <article class="why-card"><div class="why-icon">⚡</div><h3>Reduce tiempos administrativos</h3><p>Centraliza órdenes, clientes, técnicos y estados para trabajar con mayor agilidad.</p></article>
+      <article class="why-card"><div class="why-icon">🔧</div><h3>Organiza la producción</h3><p>Permite dar seguimiento a trabajos recibidos, en proceso, terminados y entregados.</p></article>
+      <article class="why-card"><div class="why-icon">📦</div><h3>Controla inventario y bodega</h3><p>Registra repuestos, artículos, ingresos, egresos y movimientos internos.</p></article>
+      <article class="why-card"><div class="why-icon">📷</div><h3>Respalda con evidencias</h3><p>Guarda fotografías y trazabilidad de cada orden para mayor transparencia.</p></article>
+      <article class="why-card"><div class="why-icon">💰</div><h3>Mejora la cobranza</h3><p>Controla abonos, saldos pendientes y cuentas por cobrar desde el sistema.</p></article>
+      <article class="why-card"><div class="why-icon">📊</div><h3>Toma mejores decisiones</h3><p>Visualiza indicadores, reportes y estados clave de la operación.</p></article>
+    </div>
+  </div>
+</section>
 
 <section class="section" id="dashboard"><div class="container"><div class="section-title"><h2>Explore una vista interactiva del sistema</h2><p>Use el menú lateral para recorrer las pantallas principales y conocer cómo se organiza la operación.</p></div><div class="demo-app"><aside class="sidebar"><div class="side-brand"><div class="brand-mark">RS4</div><div><strong>RECTIMATIC</strong><small>ERP</small></div></div><button class="side-link active" data-screen="inicio">🏠 Dashboard</button><div class="side-section">Órdenes</div><button class="side-link" data-screen="ordenes">📋 Órdenes</button><button class="side-link" data-screen="nueva">➕ Nueva orden</button><button class="side-link" data-screen="detalle">🔎 Detalle OT</button><button class="side-link" data-screen="pizarra">🧩 Pizarra</button><div class="side-section">Inventario</div><button class="side-link" data-screen="repuestos">📦 Repuestos</button><button class="side-link" data-screen="mano">🔧 Mano de obra</button><button class="side-link" data-screen="bodega">↔️ Bodega</button><div class="side-section">Personas y finanzas</div><button class="side-link" data-screen="clientes">👥 Clientes</button><button class="side-link" data-screen="mecanicos">👨‍🔧 Mecánicos</button><button class="side-link" data-screen="cobrar">💵 Cuentas por cobrar</button></aside><section class="app-main"><div class="topline"><div><h2 id="screenTitle">Dashboard</h2><p id="screenSub">Resumen operativo y financiero</p></div><div class="user-pill">👤 Usuario autorizado</div></div>
 <div class="screen active" id="screen-inicio"><div class="kpis"><div class="kpi"><span>Órdenes activas</span><b>128</b><small>+8 esta semana</small></div><div class="kpi"><span>En proceso</span><b>34</b><small style="color:var(--yellow)">Seguimiento</small></div><div class="kpi"><span>Clientes</span><b>860</b><small>Base activa</small></div><div class="kpi"><span>Por cobrar</span><b>$8.420</b><small style="color:#f87171">Referencial</small></div></div><div class="dashboard-grid"><div class="panel"><h3>Últimas órdenes <span class="badge orange">Actividad reciente</span></h3><div class="table-wrap"><table><thead><tr><th>OT</th><th>Fecha</th><th>Cliente</th><th>Motor</th><th>Estado</th><th>Cuenta</th><th>Total</th></tr></thead><tbody><tr><td>#1048</td><td>02/06/2026</td><td>Taller Central</td><td>Motor diésel 4 cilindros</td><td><span class="badge blue">Recibido</span></td><td><span class="badge red">Pendiente</span></td><td class="money">$320.00</td></tr><tr><td>#1047</td><td>02/06/2026</td><td>Diesel Pro</td><td>Motor gasolina 2.0</td><td><span class="badge orange">En proceso</span></td><td><span class="badge orange">Abonado</span></td><td class="money">$580.00</td></tr><tr><td>#1046</td><td>01/06/2026</td><td>Motores Andina</td><td>Culata multiválvula</td><td><span class="badge green">Terminado</span></td><td><span class="badge green">Cancelado</span></td><td class="money">$240.00</td></tr></tbody></table></div></div><div class="panel"><h3>Órdenes por estado</h3><canvas id="estadoChart" height="260"></canvas></div></div></div>
@@ -121,9 +288,17 @@ footer{padding:40px 0;color:var(--muted);border-top:1px solid rgba(255,122,0,.16
 <div class="screen" id="screen-cobrar"><div class="panel"><h3>Cuentas por cobrar <span class="badge red">Control financiero</span></h3><div class="kpis"><div class="kpi"><span>Órdenes</span><b>13</b><small>pendientes</small></div><div class="kpi"><span>Valor total</span><b>$4.334</b><small>referencial</small></div><div class="kpi"><span>Abonado</span><b>$293</b><small>registrado</small></div><div class="kpi"><span>Saldo</span><b>$4.040</b><small style="color:#f87171">pendiente</small></div></div><div class="table-wrap"><table><thead><tr><th>OT</th><th>Cliente</th><th>Estado</th><th>Total</th><th>Abonado</th><th>Saldo</th></tr></thead><tbody><tr><td>#1048</td><td>Taller Central</td><td><span class="badge red">Pendiente</span></td><td>$720.00</td><td>$0.00</td><td>$720.00</td></tr><tr><td>#1047</td><td>Diesel Pro</td><td><span class="badge orange">Parcial</span></td><td>$580.00</td><td>$150.00</td><td>$430.00</td></tr></tbody></table></div></div></div>
 </section></div></div></section>
 
-<section class="section" id="movilidad"><div class="container"><div class="section-title"><h2>Acceso desde cualquier dispositivo</h2><p>Consulte órdenes, clientes, inventario, producción y reportes desde computadora, tablet o teléfono móvil.</p></div><div class="mobile-wrap"><div class="mobile-features"><div class="mobile-feature"><h3>📊 Dashboard ejecutivo</h3><p>Visualice órdenes activas, cuentas por cobrar, clientes, producción y métricas clave.</p></div><div class="mobile-feature"><h3>🔧 Órdenes de trabajo</h3><p>Consulte el avance de cada trabajo, fotografías, mano de obra, repuestos y observaciones.</p></div><div class="mobile-feature"><h3>📦 Inventario y repuestos</h3><p>Controle existencias, movimientos, ingresos, egresos y disponibilidad.</p></div><div class="benefits-row"><span class="benefit">☁️ Acceso en línea</span><span class="benefit">🔒 Información segura</span><span class="benefit">⚡ Tiempo real</span><span class="benefit">📱 Compatible</span></div></div><div class="phones"><div class="phone side"><div class="phone-screen"><div class="phone-head">PANEL</div><div class="phone-body"><div class="phone-metric pm1">860<br>CLIENTES</div><div class="phone-metric pm2">34<br>EN PROCESO</div><div class="phone-metric pm3">128<br>ÓRDENES</div></div></div></div><div class="phone"><div class="phone-screen"><div class="phone-head">ORDEN DE TRABAJO</div><div class="phone-body"><b>Datos del cliente</b><div class="line"></div><div class="line short"></div><b>Detalle del motor</b><div class="line"></div><div class="line"></div><div class="phone-photo">📷 Evidencia</div></div></div></div><div class="phone side"><div class="phone-screen"><div class="phone-head">FINANZAS</div><div class="phone-body"><div class="phone-metric pm4">$8.420<br>POR COBRAR</div><div class="line"></div><div class="line"></div><div class="line short"></div></div></div></div></div></div></div></section>
+<section class="section" id="movilidad"><div class="container"><div class="section-title"><h2>Acceso desde cualquier dispositivo</h2><p>Consulte órdenes, clientes, inventario, producción y reportes desde computadora, tablet o teléfono móvil.</p></div><div class="mobile-wrap"><div class="mobile-features"><div class="mobile-feature"><h3>📊 Dashboard ejecutivo</h3><p>Visualice órdenes activas, cuentas por cobrar, clientes, producción y métricas clave.</p></div><div class="mobile-feature"><h3>🔧 Órdenes de trabajo</h3><p>Consulte el avance de cada trabajo, fotografías, mano de obra, repuestos y observaciones.</p></div><div class="mobile-feature"><h3>📦 Inventario y repuestos</h3><p>Controle existencias, movimientos, ingresos, egresos y disponibilidad.</p></div><div class="benefits-row"><span class="benefit">☁️ Acceso en línea</span><span class="benefit">🔒 Información segura</span><span class="benefit">⚡ Tiempo real</span><span class="benefit">📱 Compatible</span></div></div><div class="phone-carousel-wrap">
+  <div class="phone-carousel" id="phoneCarousel">
+    <div class="phone-card"><div class="phone"><div class="phone-screen"><div class="phone-head">PANEL</div><div class="phone-body"><div class="phone-metric pm1">860<br>CLIENTES</div><div class="phone-metric pm2">34<br>EN PROCESO</div><div class="phone-metric pm3">128<br>ÓRDENES</div></div></div></div></div>
+    <div class="phone-card"><div class="phone"><div class="phone-screen"><div class="phone-head">ORDEN DE TRABAJO</div><div class="phone-body"><b>Datos del cliente</b><div class="line"></div><div class="line short"></div><b>Detalle del motor</b><div class="line"></div><div class="line"></div><div class="phone-photo">📷 Evidencia</div></div></div></div></div>
+    <div class="phone-card"><div class="phone"><div class="phone-screen"><div class="phone-head">FINANZAS</div><div class="phone-body"><div class="phone-metric pm4">$8.420<br>POR COBRAR</div><div class="line"></div><div class="line"></div><div class="line short"></div></div></div></div></div>
+    <div class="phone-card"><div class="phone"><div class="phone-screen"><div class="phone-head">INVENTARIO</div><div class="phone-body"><div class="phone-metric pm2">Stock<br>Activo</div><div class="line"></div><div class="line"></div><div class="phone-photo">📦 Repuestos</div></div></div></div></div>
+  </div>
+  <div class="phone-nav" id="phoneDots"><button class="active" type="button"></button><button type="button"></button><button type="button"></button><button type="button"></button></div>
+</div></div></div></section>
 
-<section class="section" id="planes"><div class="container"><div class="section-title"><h2>Planes para cada etapa</h2><p>Elija el plan ideal para comenzar, probar o escalar la administración digital de su rectificadora.</p></div><div class="pricing"><article class="plan"><small>PRUEBA GUIADA</small><div class="price">Demo</div><p>Ideal para conocer el sistema y revisar sus módulos principales.</p><ul><li>Recorrido del panel</li><li>Presentación de módulos</li><li>Orientación inicial</li></ul><a class="btn btn-ghost" href="https://wa.me/593000000000" target="_blank">Solicitar demo</a></article><article class="plan featured"><small>STANDARD</small><div class="price">$55 <span>/ mes</span></div><p>Para rectificadoras que desean iniciar su control digital.</p><ul><li>Órdenes de trabajo</li><li>Clientes y mecánicos</li><li>Mano de obra</li><li>Repuestos</li><li>Soporte operativo</li></ul><a class="btn btn-primary" href="https://wa.me/593000000000" target="_blank">Solicitar información</a></article><article class="plan"><small>PREMIUM</small><div class="price">$100 <span>/ mes</span></div><p>Para rectificadoras que necesitan mayor capacidad y control.</p><ul><li>Todo Standard</li><li>Cuentas por cobrar</li><li>Auditoría</li><li>Datos técnicos</li><li>Gestión avanzada</li></ul><a class="btn btn-ghost" href="https://wa.me/593000000000" target="_blank">Solicitar cotización</a></article></div></div></section>
+<section class="section" id="planes"><div class="container"><div class="section-title"><h2>Planes para cada etapa</h2><p>Elija el plan ideal para comenzar, probar o escalar la administración digital de su rectificadora.</p></div><div class="pricing"><article class="plan"><div class="plan-badge">INICIO</div><small>PRUEBA GUIADA</small><div class="price">Demo</div><p>Ideal para conocer el sistema y revisar sus módulos principales.</p><ul><li>Recorrido del panel</li><li>Presentación de módulos</li><li>Orientación inicial</li></ul><a class="btn btn-ghost" href="https://wa.me/593000000000" target="_blank">Solicitar demo</a></article><article class="plan featured"><div class="plan-badge">MÁS SOLICITADO</div><small>STANDARD</small><div class="price">$55 <span>/ mes</span></div><p>Para rectificadoras que desean iniciar su control digital.</p><ul><li>Órdenes de trabajo</li><li>Clientes y mecánicos</li><li>Mano de obra</li><li>Repuestos</li><li>Soporte operativo</li></ul><a class="btn btn-primary" href="https://wa.me/593000000000" target="_blank">Solicitar información</a></article><article class="plan"><div class="plan-badge">AVANZADO</div><small>PREMIUM</small><div class="price">$100 <span>/ mes</span></div><p>Para rectificadoras que necesitan mayor capacidad y control.</p><ul><li>Todo Standard</li><li>Cuentas por cobrar</li><li>Auditoría</li><li>Datos técnicos</li><li>Gestión avanzada</li></ul><a class="btn btn-ghost" href="https://wa.me/593000000000" target="_blank">Solicitar cotización</a></article></div></div></section>
 
 <section class="section" id="implementacion"><div class="container"><div class="section-title"><h2>Implementación simple</h2><p>Desde la activación hasta el uso diario, el proceso está pensado para que su equipo pueda adaptarse rápido.</p></div><div class="steps"><div class="step"><b>1</b><h3>Solicita la demo</h3><p>Revisamos las necesidades de su rectificadora.</p></div><div class="step"><b>2</b><h3>Configuramos</h3><p>Activamos usuarios, datos iniciales y módulos.</p></div><div class="step"><b>3</b><h3>Capacitamos</h3><p>Su equipo aprende a registrar y controlar operaciones.</p></div><div class="step"><b>4</b><h3>Empieza a trabajar</h3><p>Opera con control, reportes y seguimiento.</p></div></div></div></section>
 
@@ -133,5 +308,37 @@ footer{padding:40px 0;color:var(--muted);border-top:1px solid rgba(255,122,0,.16
 const titles={inicio:['Dashboard','Resumen operativo y financiero'],ordenes:['Órdenes de trabajo','Control de trabajos, estados y seguimiento'],nueva:['Nueva orden','Registro de ingreso de trabajo'],detalle:['Detalle de orden','Proceso técnico, evidencia, abonos y auditoría'],pizarra:['Pizarra operativa','Vista diaria de producción'],repuestos:['Artículos / Repuestos','Catálogo e inventario'],mano:['Mano de obra','Servicios técnicos y operarios'],bodega:['Bodega','Ingresos, egresos, stock y kardex'],clientes:['Clientes','Base comercial de empresas y contactos'],mecanicos:['Mecánicos','Personal técnico y estado de actividad'],cobrar:['Cuentas por cobrar','Control de saldos y abonos']};
 document.querySelectorAll('[data-screen]').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('[data-screen]').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const key=btn.dataset.screen;document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById('screen-'+key).classList.add('active');document.getElementById('screenTitle').textContent=titles[key][0];document.getElementById('screenSub').textContent=titles[key][1];});});
 document.querySelectorAll('[data-tab]').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('[data-tab]').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.subscreen').forEach(s=>s.classList.remove('active'));document.getElementById('tab-'+btn.dataset.tab).classList.add('active');});});
+
+function setupPhoneCarousel(){
+  const track=document.getElementById('phoneCarousel');
+  if(!track) return;
+  const slides=Array.from(track.children);
+  const dots=Array.from(document.querySelectorAll('#phoneDots button'));
+  function current(){
+    const center=track.scrollLeft+track.clientWidth/2;
+    let closest=0,min=Infinity;
+    slides.forEach((s,i)=>{
+      const c=s.offsetLeft+s.clientWidth/2;
+      const d=Math.abs(center-c);
+      if(d<min){min=d;closest=i;}
+    });
+    return closest;
+  }
+  function go(i){
+    const s=slides[i];
+    track.scrollTo({left:s.offsetLeft-(track.clientWidth-s.clientWidth)/2,behavior:'smooth'});
+    dots.forEach((d,idx)=>d.classList.toggle('active',idx===i));
+  }
+  dots.forEach((dot,i)=>dot.addEventListener('click',()=>go(i)));
+  track.addEventListener('scroll',()=>{const i=current();dots.forEach((d,idx)=>d.classList.toggle('active',idx===i));});
+  let drag=false,startX=0,startLeft=0;
+  track.addEventListener('mousedown',e=>{drag=true;startX=e.pageX;startLeft=track.scrollLeft;});
+  track.addEventListener('mouseleave',()=>drag=false);
+  track.addEventListener('mouseup',()=>drag=false);
+  track.addEventListener('mousemove',e=>{if(!drag)return;e.preventDefault();track.scrollLeft=startLeft-(e.pageX-startX)*1.25;});
+  setInterval(()=>{go((current()+1)%slides.length)},4500);
+}
+setupPhoneCarousel();
+
 new Chart(document.getElementById('estadoChart'),{type:'doughnut',data:{labels:['Recibido','En proceso','Terminado'],datasets:[{data:[17,9,6],backgroundColor:['#38bdf8','#ff7a00','#22c55e'],borderWidth:0}]},options:{plugins:{legend:{position:'bottom',labels:{color:'#dce3f4'}}},cutout:'66%'}});
 </script></body></html>
